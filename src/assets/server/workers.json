@@ -1,0 +1,34 @@
+[
+    {
+        "workerName": "George Elliot",
+        "workStatus": "CEO",
+        "imgURL": "../../assets/imgs/worker1.jpg",
+        "instagramURL": "https://www.instagram.com/faz3/",
+        "facebookURL": "https://www.facebook.com/ShkHamdan",
+        "linkedinURL": "https://www.linkedin.com/in/fazza-hamdan-1b360318b"
+    },
+    {
+        "workerName": "Nora Bell",
+        "workStatus": "Sales Executive",
+        "imgURL": "../../assets/imgs/worker2.jpg",
+        "instagramURL": "https://www.instagram.com/nora_bell_/",
+        "facebookURL": "https://www.facebook.com/profile.php?id=100061227493017",
+        "linkedinURL": "https://www.linkedin.com/in/nora-bell-4ba8ba101"
+    },
+    {
+        "workerName": "Safran Foer",
+        "workStatus": "Manager",
+        "imgURL": "../../assets/imgs/worker3.webp",
+        "instagramURL": "https://www.instagram.com/jonathan.safran.foer/",
+        "facebookURL": "https://www.facebook.com/JSFoer",
+        "linkedinURL": "https://www.linkedin.com/in/jonathan-safran-52867513"
+    },
+    {
+        "workerName": "Bill and Lizzy Smiths",
+        "workStatus": "Local Farmers",
+        "imgURL": "../../assets/imgs/worker4.png",
+        "instagramURL": "https://www.instagram.com/faz3/",
+        "facebookURL": "https://www.facebook.com/profile.php?id=100061227493017",
+        "linkedinURL": "https://www.linkedin.com/in/jonathan-safran-52867513"
+    }
+]

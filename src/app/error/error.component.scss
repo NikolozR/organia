@@ -1,0 +1,33 @@
+.container-fluid {
+    .error-404 {
+        .number {
+            font-size: 400px;
+            color: #62a404;
+            text-align: center;
+            margin-top: -40px;
+            font-weight: bolder;
+        }
+        p {
+            font-size: 43px;
+            text-align: center;
+            width: 800px;
+            max-width: 100%;
+            font-weight: bold;
+            margin: auto;
+            margin-top: -81px;
+            padding-bottom: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .ret-home {
+            cursor: pointer;
+            width: fit-content;
+            padding: 20px 56px;
+            background-color: #62a404;
+            border-radius: 100px;
+            margin: auto;
+            color: white;
+            font-family: sans-serif;
+            margin-bottom: 120px;
+        }
+    }
+}

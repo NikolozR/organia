@@ -1,0 +1,23 @@
+[
+    {
+        "pageID": 0,
+        "header": "Natural Raw",
+        "content": "Natural, Raw & Organic Protein Powders",
+        "discount": 30,
+        "backImgURL": "../../assets/imgs/veggieBack.jpg"
+    },
+    {
+        "pageID": 1,
+        "header": "Fresh Fruits",
+        "content": "Tasty Fresh Fruit From All Over The World",
+        "discount": 60,
+        "backImgURL": "../../assets/imgs/veggieBack.jpg"
+    },
+    {
+        "pageID": 2,
+        "header": "Fresh Veggies",
+        "content": "Natural, Organic & Fresh Vegetables From Our Farms",
+        "discount": 43,
+        "backImgURL": "../../assets/imgs/veggieBack.jpg"
+    }
+]

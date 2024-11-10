@@ -1,0 +1,355 @@
+@font-face {
+    font-family: hand;
+    src: url(../../assets/fonts/SCRIPTIN.ttf);
+}
+
+@mixin viewAll {
+    width: fit-content;
+    padding: 11px 27px 11px 36px;
+    border-radius: 100px;
+    display: flex;
+    border: 0;
+    background-color: #62a404;
+    color: white;
+    font-weight: bolder;
+    .arrow-circle {
+        margin-left: 12px;
+        background-color: #437400;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+            font-size: 12px;
+        }
+    }
+}
+
+@mixin fresh {
+    position: absolute;
+    top: 24px;
+    left: 27px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: white;
+     width: fit-content;
+    background-color: #60a607;
+    padding: 3px 11px;
+     border-radius: 100px;
+}
+
+@mixin sale {
+    position: absolute;
+    top: 24px;
+    right: 31px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: white;
+    width: fit-content;
+    background-color: #f80604;
+    padding: 3px 11px;
+    border-radius: 100px;
+}
+
+.container {
+    padding-top: 100px;
+    .veggie-caru {
+        height: 575px;
+        .inside-page {
+            position: relative;
+            width: 100%;
+                height: 100%;
+                display: none;
+                .arrow {
+                    border: 0;
+                    cursor: pointer;
+                    position: absolute;
+                    z-index: 213;
+                    height: 63px;
+                    width: 63px;
+                    border-radius: 50%;
+                    background-color: #eaeaea;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    top: 50%;
+                    font-size: 24px;
+                    transform: translateY(-50%);
+                }
+                .arrow-left {
+                    left: 48px;
+                }
+                .arrow-right {
+                    right: 48px;
+                }
+                .active-arrow {
+                    background-color: #62a404;
+                    color: white;
+                }
+            img {
+                border-radius: 20px;
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            .content-outer {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .content {
+                    position: relative;
+                    z-index: 213;
+                    text-align: center;
+                    h3 {
+                        color: #61a206;
+                        font-family: hand;
+                        font-size: 55px;
+                    }
+                    h1 {
+                        padding-top: 38px;
+                        font-weight: bolder;
+                        font-size: 52px;
+                        width: 600px;
+                        max-width: 100%;
+                        font-family: sans-serif;
+                    }
+                    .discount {
+                        margin: auto;
+                        margin-top: 19px;
+                        padding: 8px 35px;
+                        width: fit-content;
+                        background-color: #62a404;
+                        color: white;
+                        font-weight: bolder;
+                        border-radius: 100px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        .active {
+            display: block;
+        }
+    }
+    .free-shipping {
+        .row {
+            padding-left: 44px;
+            padding-top: 54px;
+            .col-lg-3 {
+                .ship-card {
+                    display: flex;
+                    align-items: center;
+                    .ship-img {
+                        height: 64px;
+                        width: 64px;
+                        border-radius: 50%;
+                        background-color: #ffb933;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .ship-content {
+                        padding-left: 18px;
+                        p:first-child {
+                            color: #1e201f;
+                            font-weight: bolder;
+                            font-size: 18px;
+                        }
+                        p:last-child {
+                            color: #313131;
+                            font-size: 15px;
+                            font-weight: 200;
+                        }
+                    }
+                }
+            }
+            .col-lg-3:nth-child(2){
+                .ship-img {
+                    background-color: #3cafdb !important;
+                }
+            }
+            .col-lg-3:last-child {
+                .ship-img {
+                    background-color: #acaf48 !important;
+                }
+            }
+        }
+    }
+    .shop {
+        .top-row {
+            padding-top: 87px;
+            padding-bottom: 80px;
+            .col-lg-9 {
+                margin: auto;
+                .prod-row {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    column-gap: 26px;
+                    row-gap: 28px;
+                    .my-col {
+                        .prod-card {
+                            position: relative;
+                            height: 467px;
+                            border: 2px solid #e7e7e7;
+                            border-radius: 19px;
+                            display: flex;
+                            justify-content: flex-start;
+                            width: 100%;
+                            .hover-ting {
+                                display: none;
+                                position: absolute;
+                                z-index: 1000000;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                div {
+                                    width: 50px;
+                                    height: 50px;
+                                    border-radius: 50%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items:center;
+                                    cursor: pointer;
+                                }
+                                .view-details {
+                                    background-color: white;
+                                    color: black;
+                                }
+                                .add-cart {
+                                    background-color: #62a404;
+                                    color: white;
+                                }
+                            }
+                            .fresh {
+                                @include fresh();
+                            }
+                            .like {
+                                position: absolute;
+                                border: 0;
+                                width: fit-content;
+                                width: 35px;
+                                height: 32px;
+                                border-radius: 50%;
+                                background-color: #eaf1fb;
+                                top: 22px;
+                                right: 17px;
+                                i {
+                                    font-size: 13px;
+                                }
+                                .bi-heart-fill {
+                                    display: none;
+                                    color: red;
+                                }
+                            }
+                            .liked {
+                                .bi-heart {
+                                    display: none;
+                                }
+                                .bi-heart-fill {
+                                    display: block;
+                                }
+                            }
+                            .inside {
+                                padding-left: 30px;
+                                margin-top: auto;
+                                .card-content {
+                                    padding-top: 30px;
+                                    padding-bottom: 32px;
+                                    .stars {
+                                        .bi-star-fill {
+                                            color: #fdad00;
+                                        }
+                                        .bi-star {
+                                            color: #bababa;
+                                        }
+                                    }
+                                    .information {
+                                        .category {
+                                            color: #8d93a1;
+                                            font-size: 13px;
+                                        }
+                                        .prod-name {
+                                            color: #212121;
+                                            font-size: 18px;
+                                            font-weight: bolder;
+                                        }
+                                    }
+                                    .price {
+                                        font-family: sans-serif;
+                                        font-weight: bolder;
+                                        .real-price {
+                                            color: #fe0604;
+                                        }
+                                        .overline {
+                                            text-decoration: line-through;
+                                            color: #a0a7af;
+                                            font-size: 12px;
+                                            padding-right: 5px;
+                                        }
+                                        .saled-price {
+                                            color: #fe0604;
+                                        }
+                                    }
+                                }
+                            }
+                            &:hover {
+                                .hover-ting {
+                                    display: flex;
+                                    gap: 7px;
+                                }
+                                .inside {
+                                    .img-can {
+                                        img {
+                                            opacity: 0.4;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .arrows {
+                    padding-top: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .btn-arrow {
+                        border: 0;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        border: 1px solid #e7e7e7;
+                        background-color: white;
+                        color: #878787;
+                        margin-right: 6px;
+                    }
+                    .active-arrow {
+                        background-color: #62a404;
+                        color: white;
+                    }
+                    .prod-left, .prod-right {
+                        border: 0;
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                        background-color: #cbcbcb;
+                    }
+                    .prod-left {
+                        margin-right: 46px;
+                    }
+                    .prod-right {
+                        margin-left: 40px;
+                    }
+                }
+            }
+        }
+    }
+}

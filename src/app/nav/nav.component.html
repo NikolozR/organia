@@ -1,0 +1,120 @@
+<div class="nav-top">
+    <div class="container ps-0 pe-0">
+        <div class="nav-top-row">
+            <div class="left-nav-top">
+                <div class="find-store">
+                    <span class="store-icon"> <i class="bi bi-shop"></i></span>
+                    <p class="find-store-text">Find Store</p>
+                </div>
+                <div class="hr-line"></div>
+                <div class="nav-top-email">
+                    <span class="email-icon"><i class="bi bi-envelope"></i></span>
+                    <p>Support@organia.com</p>
+                </div>
+            </div>
+            <div class="right-nav-top">
+                <div class="contact-us-top">
+                    <p class="contact-span">Contact Us</p>
+                </div>
+                <div class="hr-line"></div>
+                <div class="track-top">
+                    <p class="track-span">Track Your Order</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nav-middle">
+    <div class="container ps-0 pe-0">
+        <div class="middle-nav-row">
+            <div class="main-logo">
+                <img src="./assets/imgs/croplogo.png" alt="">
+            </div>
+            <div class="search-btns">
+                <div class="search">
+                    <input type="text" class="form-control" placeholder="Search Product">
+                    <div class="select-parent">
+                        <select name="search-category" [(ngModel)]="categoryVal" (change)="categorySelect()" id="search-category">
+                            <option [value]="-1" >Select Categories</option>
+                            <option [value]="i" *ngFor="let searchCateg of categories; index as i" >{{searchCateg.categoryName}}</option>
+                        </select>
+                        <i class="bi bi-chevron-down" *ngIf="!middleNavDrop"></i>
+                    </div>
+                </div>
+                <div class="nav-btns">
+                    <button class="profile-btn"><i class="bi bi-person"></i></button>
+                    <button class="like-btn" [routerLink]="['/likes']"  [ngClass]="{'active': like.liked != 0}"><i class="bi bi-heart"></i> <div class="likes" *ngIf="like.liked != 0">{{like.liked}}</div></button>
+                    <button class="shop-cart-btn" [routerLink]="['/cart']" [ngClass]="{'active': like.carted != 0}"><i class="bi bi-bag"></i><div class="carts" *ngIf="like.carted != 0">{{like.carted}}</div></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar p-0  navbar-expand-lg">
+    <div class="blank"></div>
+    <div class="container ps-0 pe-0">
+        <div class="all-categories ">
+            <button type="button" class="categories-btn" (click)="categoryDrop()">
+                <div class="list-style-logo">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <p class="all-cate-text">ALL CATEGORIES</p>
+                <div class="cate-btn-arr">
+                    <i class="bi bi-chevron-down" [ngClass]="{'bi-chevron-up': chevronUpBool}"></i>
+                </div>
+            </button>
+            <div class="category-dropdown-par" *ngIf="categoryDropBool">
+                <div class="category-dropdown">
+                    <ul class="category-ul" [ngClass]="{'category-ul-dropped': !others}">
+                        <li id="category{{i}}" *ngFor=" let categ of categories; index as i">
+                            <div class="categ-img-circle">
+                                <img src="{{categ.categoryLogo}}" alt="">
+                            </div>
+                            <p>{{categ.categoryName}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <p class="others" *ngIf="others;else less" (click)="otherOrLess()">+ OTHERS</p>
+                <ng-template #less>
+                    <p class="others" (click)="otherOrLess()">- LESS</p>
+                </ng-template>
+            </div>
+        </div>
+        <div class="collapse-and-support">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['']">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/shop']">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Pages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Contacts</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="support">
+                <div class="support-logo">
+                    <i class="bi bi-headset"></i>
+                </div>
+                <div class="support-text">
+                    <p class="support-phone">{{supportObj.phoneNumber}}</p>
+                    <p class="supp-allways">24/7 Support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

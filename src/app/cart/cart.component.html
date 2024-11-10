@@ -1,0 +1,47 @@
+<div class="container ps-0 pe-0">
+    <div class="top-row-par">
+        <div class="top-row">
+            <div class="photo">
+                PHOTO
+            </div>
+            <div class="prod-name">
+                PRODUCT NAME
+            </div>
+            <div class="price">
+                PRICE
+            </div>
+            <div class="quantity">
+                QUANTITY
+            </div>
+            <div class="total">
+                TOTAL
+            </div>
+        </div>
+    </div>
+    <div class="prod-row" >
+        <div class="single-prod-row" *ngFor="let prod of chosenOnes" >
+            <div class="cancel" (click)="cancel(prod.id)">
+                <i class="bi bi-x-lg"></i>
+            </div>
+            <div class="img-div">
+                <img [src]="prod.imgURL" alt="">
+            </div>
+            <div class="title">
+                <p>{{prod.productName}}</p>
+            </div>
+            <div class="price">
+                <span>${{prod.price}}.00</span>   
+            </div>
+            <div class="quantity">
+                <div class="plus-minus">
+                    <span class="minus" (click)="minus(prod.id)">-</span>
+                    <span class="count">{{counts[prod.id]}}</span>
+                    <span class="plus" (click)="plus(prod.id)">+</span>
+                </div>
+            </div>
+            <div class="total">
+                <span>${{prod.price * counts[prod.id]}}.00</span>
+            </div>
+        </div>
+    </div>
+</div>

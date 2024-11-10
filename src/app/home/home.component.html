@@ -1,0 +1,425 @@
+<header>
+    <div class="container-fluid  ps-0 pe-0">
+        <div class="row h-100">
+            <div class="col-lg-4 h-100 ps-0 pe-0">
+                <div class="blurer"></div>
+                <div class="wood"></div>
+            </div>
+            <div class="col-lg-8 h-100 ps-0 pe-0">
+                <div class="content" [ngStyle]="{'backgroundImage': 'url(' + activeBackHeaderURL + ')'}">
+                    <div class="content-text">
+                        <h3 class="handwritten">100% Organic Foods</h3>
+                        <h1>
+                            Organic Veggies <br> Cook <span style="color: #5ea604;">Healthy</span>
+                        </h1>
+                        <p>{{headerVars?.paragraphText}}</p>
+                    </div>
+                    <button class="view-all">View All
+                        <div class="arrow-circle">
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="gallery">
+                    <div class="gallery-member" [ngClass]="{'chosen-gallery': !(mem.imgID != activebackgroundImg)}"
+                        *ngFor="let mem of headerBackGallery">
+                        <img src="{{mem.imgURL}}" alt="" id="{{mem.imgID}}" (click)="headerGallery($event)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="benefits">
+    <div class="container-fluid">
+        <img id="dec1" src="../../assets/imgs/noncolor.png" alt="">
+        <img id="dec2" src="../../assets/imgs/nonecolor2.png" alt="">
+        <img id="dec3" src="../../assets/imgs/nonecolor3.png" alt="">
+        <img id="dec4" src="../../assets/imgs/nonecolor4.png" alt="">
+        <img id="dec5" src="../../assets/imgs/treeDec.png" alt="">
+        <img id="dec6" src="../../assets/imgs/leaf.png" alt="">
+        <img src="../../assets/imgs/lemon.png" id="lemon" alt="">
+        <div class="container ps-0 pe-0">
+            <div class="row">
+                <div class="col-lg-3" *ngFor="let benefit of benefits">
+                    <div class="logo-circle">
+                        <div class="logo-inside-circle">
+                            <img src="{{benefit.imgURL}}" alt="">
+                        </div>
+                    </div>
+                    <div class="benefit-text">
+                        <h4>{{benefit.header}}</h4>
+                        <p>{{benefit.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="new-products">
+    <div class="cropped-veggies">
+        <img src="../../assets/imgs/veggies.webp" alt="">
+        <div class="sector-white"></div>
+    </div>
+    <div class="container ps-0 pe-0">
+        <div class="new-prods-title">
+            <h4>NATURE ONLY</h4>
+            <h1>New Products</h1>
+        </div>
+        <div class="my-prod-swiper">
+            <button class="arrow-prev arrow" [ngClass]="{'buttonAble': shownMin > 0}" (click)="leftFunct()"
+                [disabled]="!(shownMin > 0)">
+                <i class="bi bi-arrow-left-short"></i>
+            </button>
+            <div class="row">
+                <div class="col-lg-4" *ngFor="let prod of newProducts; index as i"
+                    [ngClass]="{'hidden': !everyProdSwiper[i]}">
+                    <div class="new-prod-card" id="{{i}}">
+                        <img src="{{prod.imgURL}}" alt="">
+                        <div class="gray-back">
+                            <div class="fresh" *ngIf="prod.isFresh">
+                                FRESH
+                            </div>
+                            <div class="sale" *ngIf="newProdSales[i].isSale">
+                                SALE {{newProdSales[i].percent}}%
+                            </div>
+                        </div>
+                        <div class="new-prod-content">
+                            <div class="stars">
+                                <i class="bi" *ngFor="let star of newProdSales[i].stars; index as f"
+                                    [ngClass]="{'bi-star-fill': newProdSales[i].stars[f]}"></i>
+                                <i class="bi" *ngFor="let star of newProdSales[i].stars; index as s"
+                                    [ngClass]="{'bi-star': !newProdSales[i].stars[s]}"></i>
+                                ({{prod.starVotes}})
+                            </div>
+                            <div class="product-name">
+                                <p>{{prod.productName}} {{i}}</p>
+                            </div>
+                            <div class="prod-price">
+                                <p class="price" [ngClass]="{'overline': newProdSales[i].isSale}">${{prod.price}}</p>
+                                <p class="saled-price" *ngIf="newProdSales[i].isSale">${{prod.salePrice}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="arrow-next arrow" [ngClass]="{'buttonAble': (shownMax) < (leng - 1)}"
+                [disabled]="!((shownMax) < (leng - 1))" (click)="rightFunct()">
+                <i class="bi bi-arrow-right-short"></i>
+            </button>
+            <div class="view-all">
+                View All
+                <div class="arrow-circle">
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="black-friday">
+    <img src="../../assets/imgs/tomato2.png" id="tomato2" alt="">
+    <img src="../../assets/imgs/mantomato.webp" id="mantomato" alt="">
+    <img src="../../assets/imgs/stck.png" id="stck" alt="">
+    <div class="container ps-0 pe-0">
+        <div class="row">
+            <div class="col">
+                <div class="black-friday-content">
+                    <h4 class="mb-0">BLACK FRIDAY OFFER</h4>
+                    <h1>{{blackFriday?.contentHeader}} <span>{{blackFriday?.contentHeaderMain}}</span></h1>
+                    <p>{{blackFriday?.description}}</p>
+                    <div class="view-all">
+                        View All
+                        <div class="arrow-circle">
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="every-product">
+    <div class="container ps-0 pe-0">
+        <div class="row filter-and-title">
+            <div class="col-lg-5">
+                <h4>NATURE ONLY</h4>
+                <h1>Offers New Products</h1>
+            </div>
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col-lg-2" *ngFor="let cat of smallFilter; index as i">
+                        <button type="button" [ngClass]="{'active': filterCategoryAct[i]}" id="{{i}}"
+                            (click)="smallFilterFunct($event)">{{cat}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row products-row">
+            <div class="col-lg-3" *ngFor="let product of shownProducts; index as i">
+                <div class="prod-card">
+                    <img [src]="product.imgURL" alt="">
+                    <div class="gray-back">
+                        <div class="fresh" *ngIf="product.isFresh">
+                            FRESH
+                        </div>
+                        <div class="sale" *ngIf="myProducts[i].isSale">
+                            SALE {{myProducts[i].percent}}%
+                        </div>
+                    </div>
+                    <div class="prod-content">
+                        <div class="stars">
+                            <i class="bi" *ngFor="let star of myProducts[i].stars; index as f"
+                                [ngClass]="{'bi-star-fill': myProducts[i].stars[f]}"></i>
+                            <i class="bi" *ngFor="let star of myProducts[i].stars; index as t"
+                                [ngClass]="{'bi-star': !myProducts[i].stars[t]}"></i>
+                        </div>
+                        <div class="prod-name">
+                            <p>{{product.productName}}</p>
+                        </div>
+                        <div class="prod-price">
+                            <p class="price" [ngClass]="{'overline': myProducts[i].isSale}">${{product.price}}</p>
+                            <p class="saled-price" *ngIf="myProducts[i].isSale">${{product.salePrice}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="view-all" [routerLink]="['/shop']">View All
+            <div class="arrow-circle">
+                <i class="bi bi-arrow-right"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="why-choose">
+    <div class="container ps-0 pe-0">
+        <div class="why-header">
+            <h5 class="mb-0">ORGANIC FRESH VEGETABLES</h5>
+            <h1 class="mb-0">Why People Choose Organic</h1>
+        </div>
+        <div class="why-row">
+            <div class="left-why">
+                <div class="why-inside">
+                    <div class="why-inside-content">
+                        <h3>100% Payment Secure</h3>
+                        <p>Apparently we had reached a great in the atmosphere</p>
+                    </div>
+                    <div class="why-logo">
+                        <div class="green-ting"></div>
+                        <div class="why-outer-circle">
+                            <div class="why-inside-circle">
+                                <img src="../../assets/imgs/whyGirl.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-inside">
+                    <div class="why-inside-content">
+                        <h3>Focuses Exclusively</h3>
+                        <p>Apparently we had reached a great in the atmosphere</p>
+                    </div>
+                    <div class="why-logo">
+                        <div class="green-ting"></div>
+                        <div class="why-outer-circle">
+                            <div class="why-inside-circle">
+                                <img src="../../assets/imgs/whyFruit.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-inside">
+                    <div class="why-inside-content">
+                        <h3>Pure Natural Juice</h3>
+                        <p>Apparently we had reached a great in the atmosphere</p>
+                    </div>
+                    <div class="why-logo">
+                        <div class="green-ting"></div>
+                        <div class="why-outer-circle">
+                            <div class="why-inside-circle">
+                                <img src="../../assets/imgs/whyFace.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="../../assets/imgs/pago.png" alt="">
+            <div class="right-why">
+                <div class="why-inside">
+                    <div class="why-logo">
+                        <div class="green-ting"></div>
+                        <div class="why-outer-circle">
+                            <div class="why-inside-circle">
+                                <img src="../../assets/imgs/whyStraw.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-inside-content">
+                        <h3>100% Payment Secure</h3>
+                        <p>Apparently we had reached a great in the atmosphere</p>
+                    </div>
+                </div>
+                <div class="why-inside">
+                    <div class="why-logo">
+                        <div class="green-ting"></div>
+                        <div class="why-outer-circle">
+                            <div class="why-inside-circle">
+                                <img src="../../assets/imgs/whyTea.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-inside-content">
+                        <h3>Focuses Exclusively</h3>
+                        <p>Apparently we had reached a great in the atmosphere</p>
+                    </div>
+                </div>
+                <div class="why-inside">
+                    <div class="why-logo">
+                        <div class="green-ting"></div>
+                        <div class="why-outer-circle">
+                            <div class="why-inside-circle">
+                                <img src="../../assets/imgs/whyPlant.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-inside-content">
+                        <h3>Pure Natural Juice</h3>
+                        <p>Apparently we had reached a great in the atmosphere</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="special-offer">
+    <div class="container ps-0 pe-0">
+        <div class="row top-row">
+            <div class="col-lg-6 list-col">
+                <div class="offer-list-header">
+                    <div class="offer-list-title">
+                        <h4 class="mb-0">FRESH VEGETABLES</h4>
+                        <h1 class="mb-0">Offers of This Week!</h1>
+                    </div>
+                    <div class="time">
+                        <div class="days">
+                            <div class="circle">
+                                {{d}}
+                            </div>
+                            Day
+                        </div>
+                        <div class="hours">
+                            <div class="circle">
+                                {{h}}
+                            </div>
+                            Hour
+                        </div>
+                        <div class="mins">
+                            <div class="circle">
+                                {{m}}
+                            </div>
+                            Min
+                        </div>
+                        <div class="secs">
+                            <div class="circle">
+                                {{s}}
+                            </div>
+                            Sec
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4" *ngFor="let off of offers[0]">
+                        <div class="offer-card">
+                            <div class="img-outer">
+                                <img [src]="off.imgURL" alt="">
+                            </div>
+                            <div class="offer-content">
+                                <p>{{off.productName}}</p>
+                                <p>${{off.price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all">View All
+                    <div class="arrow-circle">
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 special-col">
+                <div class="special-card">
+                    <div class="green-percent">
+                        <div class="inside">
+                            <div class="green-title">BEST PACKAGE</div>
+                            <div class="percent">
+                                <span>{{offers[1].specialOfferPercent}}</span>
+                                <div class="off">
+                                    <p>%</p>
+                                    <p>OFF</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="white-line position-absolute"></div>
+                    <img [src]="offers[1].imgURL" alt="">
+                    <div class="offer-ting">
+                        <span>SPECIAL OFFER</span>
+                    </div>
+                    <div class="content">
+                        <h2>{{offers[1].specialOfferTitle}}</h2>
+                        <p>{{offers[1].specialOfferDesc}}</p>
+                        <div class="view-all">
+                            View All
+                            <div class="arrow-circle">
+                                <i class="bi bi-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="workers">
+    <div class="container ps-0 pe-0">
+        <div class="workers-title">
+            <p>ORGANIC FRESH VEGETABLES</p>
+            <h1>We Are Brilliant Farmers</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-3" *ngFor="let worker of workers">
+                <img [src]="worker.imgURL" alt="">
+                <div class="social-platforms">
+                    <div class="inside">
+                        <a href="{{worker.instagramURL}}" target="_blank"  class="insta">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="{{worker.facebookURL}}" target="_blank"  class="facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="{{worker.linkedinURL}}" target="_blank"  class="linked">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="green-stick"></div>
+                <div class="worker-info">
+                    <p class="worker-name">{{worker.workerName}}</p>
+                    <p class="work-status">{{worker.workStatus}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

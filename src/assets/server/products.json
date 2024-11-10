@@ -1,0 +1,157 @@
+[
+    {
+        "id": 0,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/tomato.png",
+        "category": "food"
+
+    },
+    {
+        "id": 1,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 180,
+        "stars": 3,
+        "starVotes": 42,
+        "imgURL": "../../assets/imgs/onion.png",
+        "category": "beverages"
+    },
+    {
+        "id": 2,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/orange.png",
+        "category": "dried"
+    },
+    {
+        "id": 3,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/pineapple.png",
+        "category": "dried"
+    },
+    {
+        "id": 4,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/root.png",
+        "category": "butter & eggs"
+    },
+    {
+        "id": 5,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/tomato.png",
+        "category": "beverages"
+    },
+    {
+        "id": 6,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/tomato.png",
+        "category": "food"
+    },
+    {
+        "id": 7,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/tomato.png",
+        "category": "dried"
+    },
+    {
+        "id": 8,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/tomato.png",
+        "category": "butter & eggs"
+    },
+    {
+        "id": 9,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/tomato.png",
+        "category": "butter & eggs"
+    },
+    {
+        "id": 10,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/tomato.png",
+        "category": "food"
+    },
+    {
+        "id": 11,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/tomato.png",
+        "category": "beverages"
+    },
+    {
+        "id": 12,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/tomato.png",
+        "category": "butter & eggs"
+    },
+    {
+        "id": 13,
+        "productName": "Vegan Egg Replacer",
+        "isFresh": true,
+        "price": 200,
+        "salePrice": 150,
+        "stars": 4,
+        "starVotes": 32,
+        "imgURL": "../../assets/imgs/tomato.png",
+        "category": "dried"
+    }
+]

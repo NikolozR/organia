@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="img-div">
+                <img [src]="chosen.imgURL" alt="">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="prod-details-content">
+                <h3>{{chosen.productName}}</h3>
+                <div class="stars">
+                    <i class="bi" *ngFor="let star of stars; index as f" [ngClass]="{'bi-star-fill': stars[f]}"></i>
+                    <i class="bi" *ngFor="let star of stars; index as t" [ngClass]="{'bi-star': !stars[t]}"></i>
+                    <span>({{chosen.starVotes}} reviews)</span>
+                </div>
+                <p class="price" *ngIf="chosen.price == chosen.salesPrice;else saled">${{chosen.price}}.00</p>
+                <ng-template #saled>
+                    <p class="price">${{chosen.salesPrice}}.00</p>
+                </ng-template>
+                <p class="details">{{chosen.description}}</p>
+                <div class="quantity-cart">
+                    <div class="quantity" *ngIf="!isOnCart">
+                        <button class="minus" [disabled]="quantity == 0" (click)="minus()"><span>-</span></button>
+                        <span class="count">{{quantity}}</span>
+                        <button class="plus" (click)="plus()">+</button>
+                    </div>
+                    <div class="add-cart">
+                        <button [disabled]="quantity == 0" (click)="addCart()" *ngIf="!isOnCart;else cart">ADD TO CART</button>
+                        <ng-template #cart>
+                            <div class="cart-out">
+                                <p>You Have This Product On Your Cart</p>
+                                <div class="view-all">
+                                    View Cart
+                                <div class="arrow-circle">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="small-info">
+                    <p class="category"><span>CATEGORY:</span> {{chosen.category}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

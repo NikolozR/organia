@@ -1,0 +1,145 @@
+@mixin viewAll {
+    width: fit-content;
+    padding: 11px 27px 11px 36px;
+    border-radius: 100px;
+    display: flex;
+    border: 0;
+    background-color: #62a404;
+    color: white;
+    font-weight: bolder;
+    .arrow-circle {
+        margin-left: 12px;
+        background-color: #437400;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+            font-size: 12px;
+        }
+    }
+}
+
+
+
+.container {
+    .row {
+        padding-top: 130px;
+        padding-bottom: 100px;
+        .col-lg-6 {
+            .img-div {
+                border: 2px solid #f0f0f0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 570px;
+                img {
+                    width: 70%;
+                    height: 70%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+            .prod-details-content {
+                padding-left: 72px;
+                h3 {
+                    padding-top: 75px;
+                    color: #0d0d0d;
+                    font-weight: bolder;
+                    font-size: 40px;
+                    font-family: sans-serif;
+                    padding-bottom: 23px;
+                }
+                .stars {
+                    .bi-star-fill {
+                        color: #f2c754;
+                    }
+                    .bi-star {
+                        color: #bababa;
+                    }
+                    span {
+                        padding-left: 12px;
+                        font-size: 16px;
+                        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    }
+                }
+                .price {
+                    padding-top: 14px;
+                    font-weight: bolder;
+                    font-size: 24px;
+                    padding-bottom: 20px;
+                }
+                .details {
+                    color: #818181;
+                    font-size: 18px;
+                    padding-bottom: 45px;
+                }
+                .quantity-cart {
+                    display: flex;
+                    column-gap: 30px;
+                    .quantity {
+                        display: flex;
+                        column-gap: 15px;
+                        align-items: center;
+                        button {
+                            border: 0;
+                            width: 38px;
+                            height: 38px;
+                            border-radius: 50%;
+                            background-color: #f5f5f5;
+                            font-size: 20px;
+                            font-weight: bolder;
+                        }
+                        .minus {
+                            span {
+                                margin-top: -4px;
+                                display: block;
+                            }
+                        }
+                        .count {
+                            font-size: 20px;
+                            font-weight: bolder;
+                        }
+                    }
+                    .add-cart {
+                        button {
+                            width: fit-content;
+                            padding: 11px 27px;
+                            border-radius: 100px;
+                            display: flex;
+                            border: 0;
+                            background-color: #62a404;
+                            color: white;
+                            font-weight: bolder;
+                        }
+                        .cart-out {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 10px;
+                            padding-bottom: 15px;
+                        }
+                        p {
+                            font-size: 23px;
+                            font-weight: bold;
+                        }
+                        .view-all {
+                            @include viewAll();
+                        }
+                    }
+                }
+                .small-info {
+                    .category {
+                        span {
+                            font-weight: bolder;
+                            font-size: 18px;
+                            font-family: sans-serif;
+                            padding-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

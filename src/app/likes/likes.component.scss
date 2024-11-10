@@ -1,0 +1,170 @@
+@mixin fresh {
+    position: absolute;
+    top: 24px;
+    left: 27px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: white;
+     width: fit-content;
+    background-color: #60a607;
+    padding: 3px 11px;
+     border-radius: 100px;
+}
+
+
+    @mixin viewAll {
+        width: fit-content;
+        padding: 11px 27px 11px 36px;
+        border-radius: 100px;
+        display: flex;
+        border: 0;
+        background-color: #62a404;
+        color: white;
+        font-weight: bolder;
+        .arrow-circle {
+            margin-left: 12px;
+            background-color: #437400;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i {
+                font-size: 12px;
+            }
+        }
+    }
+
+
+@mixin sale {
+    position: absolute;
+    top: 24px;
+    right: 31px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: white;
+    width: fit-content;
+    background-color: #f80604;
+    padding: 3px 11px;
+    border-radius: 100px;
+}
+
+.container {
+    .my-row {
+        padding-top: 30px;
+        padding-bottom: 60px;
+        display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    column-gap: 26px;
+                    row-gap: 28px;
+                    .my-col {
+                        .prod-card {
+                            position: relative;
+                            height: 467px;
+                            border: 2px solid #e7e7e7;
+                            border-radius: 19px;
+                            display: flex;
+                            justify-content: center;
+                            width: 100%;
+                            .fresh {
+                                @include fresh();
+                            }
+                            .like {
+                                position: absolute;
+                                border: 0;
+                                width: fit-content;
+                                width: 35px;
+                                height: 32px;
+                                border-radius: 50%;
+                                background-color: #eaf1fb;
+                                top: 22px;
+                                right: 17px;
+                                i {
+                                    font-size: 13px;
+                                }
+                                .bi-heart-fill {
+                                    display: none;
+                                    color: red;
+                                }
+                            }
+                            .liked {
+                                .bi-heart {
+                                    display: none;
+                                }
+                                .bi-heart-fill {
+                                    display: block;
+                                }
+                            }
+                            .inside {
+                                padding-left: 30px;
+                                margin-top: auto;
+                                .card-content {
+                                    padding-top: 30px;
+                                    padding-bottom: 32px;
+                                    .stars {
+                                        .bi-star-fill {
+                                            color: #fdad00;
+                                        }
+                                        .bi-star {
+                                            color: #bababa;
+                                        }
+                                    }
+                                    .information {
+                                        .category {
+                                            color: #8d93a1;
+                                            font-size: 13px;
+                                        }
+                                        .prod-name {
+                                            color: #212121;
+                                            font-size: 18px;
+                                            font-weight: bolder;
+                                        }
+                                    }
+                                    .price {
+                                        font-family: sans-serif;
+                                        font-weight: bolder;
+                                        .real-price {
+                                            color: #fe0604;
+                                        }
+                                        .overline {
+                                            text-decoration: line-through;
+                                            color: #a0a7af;
+                                            font-size: 12px;
+                                            padding-right: 5px;
+                                        }
+                                        .saled-price {
+                                            color: #fe0604;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+    }
+    .no-product {
+        .zero {
+            font-size: 400px;
+            color: #62a404;
+            font-weight: bolder;
+            text-align: center;
+            margin-top: -120px;
+        }
+        p {
+            color: #2a2a2a;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            font-size: 50px;
+            margin: auto;
+            margin-top: -115px;
+            width: 500px;
+            max-width: 100%;
+            padding-bottom: 30px;
+        }
+        .view-all {
+            margin: auto;
+            margin-bottom: 100px;
+            @include viewAll();
+        }
+    }
+}

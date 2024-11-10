@@ -1,0 +1,50 @@
+<div class="container ps-0 pe-0">
+    <div class="my-row" *ngIf="likedProds.length != 0;else noProduct">
+        <div class="my-col" *ngFor="let prod of likedProds; index as i">
+            <div class="prod-card">
+                <div class="fresh" *ngIf="prod.isFresh">
+                    FRESH
+                </div>
+                <button class="like" id="{{prod.id}}" [ngClass]="{'liked': likes.likedBool[prod.id]}" (click)="shopLike($event)">
+                    <i class="bi bi-heart"></i>
+                    <i class="bi bi-heart-fill"></i>
+                </button>
+                <div class="inside">
+                    <div class="img-can">
+                        <img [src]="prod.imgURL" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="stars">
+                            <i class="bi" *ngFor="let star of starsAndSale[i].stars; index as f" [ngClass]="{' bi-star-fill': starsAndSale[i].stars[f]}"></i>
+                            <i class="bi" *ngFor="let star of starsAndSale[i].stars; index as n" [ngClass]="{' bi-star': !starsAndSale[i].stars[n]}"></i>
+                        </div>
+                        <div class="information">
+                            <p class="category">{{prod.category | titlecase}}</p>
+                            <p class="prod-name">{{prod.productName}} {{prod.id}}</p>
+                        </div>
+                        <div class="price">
+                            <span class="real-price" [ngClass]="{'overline': starsAndSale[i].isSale}">${{prod.price}}</span>
+                            <span class="saled-price" *ngIf="starsAndSale[i].isSale">${{prod.salesPrice}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #noProduct>
+        <div class="container">
+            <div class="no-product">
+                <div class="zero">
+                    0
+                </div>
+                <p>You Do Not Have Liked Products</p>
+                <div class="view-all" [routerLink]="['/shop']">
+                    View Products
+                    <div class="arrow-circle">
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>

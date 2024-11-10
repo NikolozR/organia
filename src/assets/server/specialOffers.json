@@ -1,0 +1,56 @@
+[
+    [{
+        "id":0,
+        "productName": "Vegan Egg",
+        "price": 280,
+        "imgURL": "../../assets/imgs/mango.png"
+    },
+    {
+        "id":1,
+        "productName": "Vegan Egg",
+        "price": 280,
+        "imgURL": "../../assets/imgs/pago2.png"
+    },
+    {
+        "id":2,
+        "productName": "Vegan Egg",
+        "price": 280,
+        "imgURL": "../../assets/imgs/onion2.png"
+    },
+    {
+        "id":3,
+        "productName": "Vegan Egg",
+        "price": 280,
+        "imgURL": "../../assets/imgs/onion2.png"
+    },
+    {
+        "id":4,
+        "productName": "Vegan Egg",
+        "price": 280,
+        "imgURL": "../../assets/imgs/pepper.png"
+    },
+    {
+        "id":5,
+        "productName": "Vegan Egg",
+        "price": 280,
+        "imgURL": "../../assets/imgs/orange2.png"
+    },
+    {
+        "id":6,
+        "productName": "Vegan Egg",
+        "price": 280,
+        "imgURL": "../../assets/imgs/mango.png"
+    },
+    {
+        "id":7,
+        "productName": "Vegan Egg",
+        "price": 280,
+        "imgURL": "../../assets/imgs/pepper.png"
+    }],
+    {
+        "specialOfferTitle": "Natural Fresh Fruits Juice",
+        "specialOfferPercent": 50,
+        "specialOfferDesc": "Apparently we had reached a great in atmosphere.",
+        "imgURL": "../../assets/imgs/pagoApri.png"
+    }
+]

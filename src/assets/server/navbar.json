@@ -1,0 +1,59 @@
+[
+    {
+      "objectTitle": "support",
+      "phoneNumber": "+90 157 058 4567"
+    },
+    {
+      "objectTitle": "categories",
+      "categories": [
+        {
+          "categoryName": "Vegetables", 
+          "categoryLogo": "./assets/imgs/vegetableLogo.png"
+        },
+        {
+          "categoryName": "Fresh Fruits",
+          "categoryLogo": "./assets/imgs/freshfruitsLogo.png"
+        },
+        {
+          "categoryName": "Beverages",
+          "categoryLogo": "./assets/imgs/beveragesLogo.png"
+        },
+        {
+          "categoryName": "Babies & Kids", 
+          "categoryLogo": "./assets/imgs/babiesLogo.png"
+        },
+        {
+          "categoryName": "Frozen Foods", 
+          "categoryLogo": "./assets/imgs/frozenLogo.png"
+        },
+        {
+          "categoryName": "SuperFoods & Greens", 
+          "categoryLogo": "./assets/imgs/superfoodLogo.png"
+        },
+        {
+          "categoryName":  "Fresh Tomatoes",
+          "categoryLogo": "./assets/imgs/sokoLogo.png"
+        },
+        {
+          "categoryName": "Fresh Nut and Seed",
+          "categoryLogo": "./assets/imgs/nutLogo.png"
+        },
+        {
+          "categoryName": "Fresh Organic",
+          "categoryLogo": "./assets/imgs/organicLogo.png"
+        },
+        {
+          "categoryName": "bla bla",
+          "categoryLogo": ""
+        },
+        {
+          "categoryName": "bla bla",
+          "categoryLogo": ""
+        },
+        {
+          "categoryName": "bla bla",
+          "categoryLogo": ""
+        }
+      ]   
+    }
+  ]
