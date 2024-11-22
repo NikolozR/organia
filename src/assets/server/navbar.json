@@ -41,18 +41,6 @@
         {
           "categoryName": "Fresh Organic",
           "categoryLogo": "./assets/imgs/organicLogo.png"
-        },
-        {
-          "categoryName": "bla bla",
-          "categoryLogo": ""
-        },
-        {
-          "categoryName": "bla bla",
-          "categoryLogo": ""
-        },
-        {
-          "categoryName": "bla bla",
-          "categoryLogo": ""
         }
       ]   
     }

@@ -18,10 +18,8 @@ export class NavComponent implements OnInit {
     let chosen = Number(this.categoryVal);
     if(chosen >= 0){
       this.middleNavDrop = true;
-      console.log("dade")
     }else{
       this.middleNavDrop = false;
-      console.log("nope")
     }
   }
 
