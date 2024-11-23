@@ -7,18 +7,20 @@
             </div>
             <div class="col-lg-8 h-100 ps-0 pe-0">
                 <div class="content" [ngStyle]="{'backgroundImage': 'url(' + activeBackHeaderURL + ')'}">
-                    <div class="content-text">
-                        <h3 class="handwritten">100% Organic Foods</h3>
-                        <h1>
-                            Organic Veggies <br> Cook <span style="color: #5ea604;">Healthy</span>
-                        </h1>
-                        <p>{{headerVars?.paragraphText}}</p>
-                    </div>
-                    <button class="view-all">View All
-                        <div class="arrow-circle">
-                            <i class="bi bi-arrow-right"></i>
+                    <div class="container">
+                        <div class="content-text">
+                            <h3 class="handwritten">100% Organic Foods</h3>
+                            <h1>
+                                Organic Veggies <br> Cook <span style="color: #5ea604;">Healthy</span>
+                            </h1>
+                            <p>{{headerVars?.paragraphText}}</p>
                         </div>
-                    </button>
+                        <button class="view-all">View All
+                            <div class="arrow-circle">
+                                <i class="bi bi-arrow-right"></i>
+                            </div>
+                        </button>
+                    </div>
                 </div>
                 <div class="gallery">
                     <div class="gallery-member" [ngClass]="{'chosen-gallery': !(mem.imgID != activebackgroundImg)}"
@@ -31,7 +33,7 @@
     </div>
 </header>
 
-
+<!-- 
 <div class="benefits">
     <div class="container-fluid">
         <img id="dec1" src="../../assets/imgs/noncolor.png" alt="">
@@ -422,4 +424,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
