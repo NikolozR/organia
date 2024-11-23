@@ -173,7 +173,14 @@ header {
         .container {
             .row {
                 padding-top: 154px;
-                .col-lg-3 {
+                width: 100%;
+                row-gap: 40px;
+                .col-lg-3, .col-6 {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    
                     .logo-circle {
                         height: 155px;
                         width: 155px;
@@ -193,9 +200,8 @@ header {
                         }                    
                     }
                     .benefit-text {
-                        padding-top: 25px;
-                        width: 250px;
-                        max-width: 100%;
+                        width: 100%;
+                        padding: 25px 50px 0;
                         h4 {
                             font-size: 17px;
                         }
@@ -266,17 +272,24 @@ header {
         }
         .my-prod-swiper {
             position: relative;
+            max-width: 100%; // Allow the container to adapt to the screen size
+            padding: 0 30px;
             .arrow-prev {
-                top: 50%;
-                transform: translateY(-50%);
-                left: 0;
+                left: -20px; // Adjust distance from the left
+                @media (max-width: 1400px) {
+                    left: 10px; // Tweak for narrower screens
+                }
             }
+        
             .arrow-next {
-                top: 50%;
-                right: 0;
-                transform: translateY(-50%);
+                right: -20px; // Adjust distance from the right
+                @media (max-width: 1400px) {
+                    right: 10px; // Tweak for narrower screens
+                }
             }
             .arrow {
+                top: 50%;
+                transform: translateY(-50%);
                 border: 0;
                 height: 64px;
                 width: 64px;
@@ -299,7 +312,7 @@ header {
                 @include viewAll();
             }
             .row {
-                width: fit-content;
+                width: auto;
                 margin: auto;
                 padding-bottom: 57px;
                 gap: 30px;
@@ -345,6 +358,7 @@ header {
                         }
                         .new-prod-content {
                             border: 2px solid #eaeaea;
+                            background-color: white;
                             border-radius: 15px;
                             padding: 87px 110px 28px 40px;
                             .stars {
@@ -1042,6 +1056,12 @@ header {
     }
 }
 
+@media screen and (max-width: 1400px) {
+    .arrow-next {
+        right: 0px !important;
+    }
+}
+
 
 @media screen and (max-width: 992px) {
     header {
@@ -1071,6 +1091,20 @@ header {
     }
     .view-all {
         margin-left: 30px;
+    }
+    .my-prod-swiper {
+        padding: 0 !important;
+    }
+    .arrow-prev {
+        left: 0 !important;
+    }
+    .new-prod-card {
+        width: 70%;
+        margin: auto;
+        img {
+            width: 70%;
+            height: auto;
+        }
     }
 }
 
