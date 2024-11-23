@@ -788,8 +788,32 @@ header {
         .why-row {
             display: flex;
             justify-content: center;
+            
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column; // Stack items in a single column
+                align-items: center; // Center-align items in the column layout
+            }
+            @media screen and (max-width: 1070px) {
+                // flex-wrap: wrap; // Enable wrapping for responsive layouts
+                justify-content: space-between;
+                #pago {
+                    display: none;
+                }
+            }
             .left-why, .right-why {
                 padding-top: 40px;
+                @media screen and (max-width: 1070px) {
+                margin: 0px !important;
+                }
+                @media screen and (max-width: 768px) {
+                    margin: 0 !important;
+                    width: 100%; // Make items take full width
+                    align-items: center; // Center content
+                    .why-inside {
+                        padding: 0 !important;
+                    }
+                }
                 .why-inside {
                     margin-bottom: 35px;
                     display: flex;
@@ -842,6 +866,10 @@ header {
                 }
                 .why-inside:nth-child(2){
                     padding-right: 40px;
+                    @media screen and (max-width: 768px) {
+                        padding-right: 0 !important;
+                        padding-left: 0 !important;
+                    }
                 }
             }
             .left-why {
@@ -852,6 +880,9 @@ header {
                 .why-inside:nth-child(2){
                     padding-right: 0px !important;
                     padding-left: 40px;
+                    @media screen and (max-width: 768px) {
+                        padding-left: 0 !important;
+                    }
                 }
                 .why-inside-content {
                     text-align: start !important;
@@ -1169,6 +1200,14 @@ header {
                     }
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    .left-why, .right-why {
+        .why-inside:nth-child(2) {
+            padding: 0 !important;
         }
     }
 }
