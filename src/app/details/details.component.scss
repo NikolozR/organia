@@ -44,8 +44,10 @@
             }
             .prod-details-content {
                 padding-left: 72px;
+                @media screen and (max-width: 992px) {
+                    padding-left: 0;
+                }
                 h3 {
-                    padding-top: 75px;
                     color: #0d0d0d;
                     font-weight: bolder;
                     font-size: 40px;
@@ -130,13 +132,12 @@
                     }
                 }
                 .small-info {
+                    padding-top: 30px;
                     .category {
-                        span {
-                            font-weight: bolder;
-                            font-size: 18px;
-                            font-family: sans-serif;
-                            padding-right: 5px;
-                        }
+                        font-weight: bolder;
+                        font-size: 18px;
+                        font-family: sans-serif;
+                        padding-right: 5px;
                     }
                 }
             }
