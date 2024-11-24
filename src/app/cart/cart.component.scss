@@ -7,30 +7,39 @@
             padding-bottom: 40px;
             color: white;
             font-weight: bolder;
-            padding-left: 220px;
             display: grid;
             grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
-            .photo {
+            @media screen and(max-width: 768px) {
+                div {
+                    font-size: 12px;
+                }
+            }
+            .prod-name {
                 text-align: center;
+            }
+            .photo {
+                padding-left: 30px;
             }
         }
     }
     .prod-row {
-        padding-left: 120px;
         .single-prod-row {
             position: relative;
             .cancel {
                 position: absolute;
-                left: 40px;
-                top: 85px;
-                color: #d9e4ea;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #93a2aa;
                 cursor: pointer;
             }
             display: grid;
-            padding-left: 100px;
             padding-top: 43px;
             padding-bottom: 43px;
             grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+            @media screen and (max-width: 576px) {
+                grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+            }
             .img-div {
                 img {
                     display: block;
@@ -38,13 +47,18 @@
                     height: 100px;
                     object-fit: cover;
                     object-position: center;
-                    margin: auto;
                 }
             }
             .title {
                 font-weight: bold;
                 font-size: 17px;
-                padding-top: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                @media screen and (max-width: 576px) {
+                    font-size: 12px;
+                }
             }
             .price {
                 color: #899ba5;
@@ -62,6 +76,14 @@
                     display: flex;
                     gap: 35px;
                     padding: 15px 25px 20px 25px;
+                    @media screen and (max-width: 768px) {
+                        padding: 5px 8px 6px 8px;
+                        gap: 20px;
+                    }
+                    @media screen and (max-width: 576px) {
+                        padding: 2px 4px 3px 4px;
+                        gap: 10px;
+                    }
                     .minus, .plus {
                         color: #d0d9de;
                         font-size: 20px;
