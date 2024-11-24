@@ -905,7 +905,15 @@ header {
     .container {
         .top-row {
             padding-top: 130px;
+            @media screen and (max-width: 1200px){
+                display: flex;
+                row-gap: 30px;
+                flex-direction: column-reverse;
+            }
             .list-col {
+                @media screen and (max-width: 1200px) {
+                    width: 100%;
+                }
                 .offer-list-header {
                     display: flex;
                     justify-content: space-between;
@@ -948,6 +956,9 @@ header {
                     .col-lg-4 {
                         padding-right: 30px;
                         margin-bottom: 32px;
+                        @media screen and (max-width: 1200px) {
+                            padding-right: 0;
+                        }
                         .offer-card {
                             .img-outer {
                                 display: flex;
@@ -980,6 +991,10 @@ header {
             }
             .special-col {
                 padding-left: 15px;
+                @media screen and (max-width: 1200px) {
+                    width: 100%;
+                    padding-left: 0;
+                }
                 .special-card {
                     position: relative;
                     width: 100%;
@@ -1012,16 +1027,28 @@ header {
                         bottom: -136px;
                         object-fit: cover;
                         object-position: center;
-                        height: 732px;
-                        right: -127px;
+                        height: auto;
+                        right: 0;
                         max-width: 100%;
                         z-index: 2;
+                        @media screen and (max-width: 1399px) {
+                            width: 300px;
+                            bottom: 0px;
+                        }
+                        @media screen and (max-width: 576px) {
+                            display: none;
+                        }
                     }
                     .green-percent {
                         position: absolute;
                         left: 272px;
                         z-index: 23;
                         top: 156px;
+                        @media screen and (max-width: 1399px) {
+                            top: 0px;
+                            left: auto;
+                            right: 0px !important;
+                        }
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -1057,33 +1084,63 @@ header {
                             }
                         }
                     }
-                    .white-line {
-                        height: 100%;
-                        width: 97px;
-                        right: 0;
-                        background-color: white;
-                        z-index: 232;
-                        transform: translateX(100%);
-                    }
                     .content {
                         padding-top: 290px;
                         padding-left: 45px;
+                        @media screen and (max-width: 1399px) {
+                            padding-top: 150px;
+                        }
+                        @media screen and (max-width: 1200px) {
+                            padding-left: 120px;
+                            padding-top: 200px;   
+                        }
+                        @media screen and (max-width: 992px) {
+                            padding-left: 50px !important;
+                        }
+                        @media screen and (max-width: 576px) {
+                            padding-left: 0 !important;
+                        }
+                        
                         h2 {
                             width: 265px;
                             max-width: 100%;
                             font-size: 40px;
                             font-weight: bolder;
                             font-family: sans-serif;
+                            @media screen and (max-width: 1200px) {
+                                width: auto;
+                            }
+                            @media screen and (max-width: 992px) {
+                                width: 306px;
+                            }
+                            @media screen and (max-width: 576px) {
+                                width: auto;
+                                text-align: center;
+                            }
                         }
                         p {
                             width: 230px;
                             max-width: 100%;
                             color: #737373;
                             font-size: 18px;
+                            @media screen and (max-width: 1200px) {
+                                width: auto;
+                            }
+                            @media screen and (max-width: 768px) {
+                                width: 240px;
+                            }
+                            @media screen and (max-width: 576px) {
+                                width: auto;
+                                text-align: center;
+                            }
                         }
                         .view-all {
                             margin-top: 33px;
                             @include viewAll();
+                            @media screen and (max-width: 576px) {
+                                margin: auto;
+                                margin-top: 30px;
+                            }
                         }
                     }
                 }

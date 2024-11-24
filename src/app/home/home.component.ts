@@ -143,7 +143,7 @@ export class HomeComponent implements OnInit {
       this.h = 0;
       this.m = 0;
       this.s = 0;
-      let upTo:number = new Date(2022, 5, 1).getTime()
+      let upTo:number = new Date(2025, 2, 1).getTime()
       let now:number = new Date().getTime()
       let distance = upTo - now;
       this.d = Math.floor(distance / (1000 * 60 * 60 * 24));
