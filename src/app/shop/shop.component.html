@@ -1,14 +1,6 @@
 <div class="container ps-0 pe-0">
     <div class="veggie-caru">
         <div class="inside-page" *ngFor="let car of carouselData; index as i" [ngClass]="{'active': carouselBoos[i]}">
-            <button class="arrow-left arrow" [disabled]="!leftAllowed" [ngClass]="{'active-arrow': leftAllowed}"
-                (click)="stepLeft()">
-                <i class="bi bi-arrow-left-short"></i>
-            </button>
-            <button class="arrow-right arrow" [disabled]="!rightAllowed" [ngClass]="{'active-arrow': rightAllowed}"
-                (click)="stepRight()">
-                <i class="bi bi-arrow-right-short"></i>
-            </button>
             <img [src]="car.backImgURL" alt="">
             <div class="content-outer">
                 <div class="content">

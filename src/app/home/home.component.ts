@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   headerBackGallery: any = '';
   activeBackHeaderURL: any = '';
   headerGallery(parEvent: any) {
-    let clickedID = parEvent["path"][0].id;
+    let clickedID = parEvent['srcElement']['attributes']['id'].value;
     this.activebackgroundImg = clickedID;
     this.activeBackHeaderURL = this.headerBackGallery?.find((el: any) => {
       return el.imgID == this.activebackgroundImg;

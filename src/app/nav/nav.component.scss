@@ -545,10 +545,14 @@ p {
             }
             .collapse-and-support {
                 margin-top: 20px;
+                
             }
         }
     }
 }
+.disable {
+    opacity: 0.5;
+}   
 
 @media screen and (max-width: 575px){
     .container {

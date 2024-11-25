@@ -73,13 +73,13 @@ export class ShopComponent implements OnInit {
       }
     }
   }
-  buttonClicked(p:any){
+  buttonClicked(p: any) {
+    let clickedId = p['target']['attributes']['id'].value
     for (let i = 0; i < this.pages.length; i++) {
       this.pages[i] = false;
     }
-    this.pages[p.path[0].id] = true;
+    this.pages[clickedId] = true;
     this.chosenShownProds();
-    console.log(this.prodIsShown)
   }
   leftPage(){
     let x = this.pages.indexOf(true);
@@ -101,25 +101,23 @@ export class ShopComponent implements OnInit {
   
 
   // adding to like list
-  shopLike(p:any){
-      let id = p.path[0].id;
-    if (id == '') {
-      id = p.path[1].id
-    }
-    if (!this.like.likedArr.includes(id)) {
-      this.like.likedArr.push(id)
-      this.like.likedBool[id] = true;
-    }else{
-      let t = this.like.likedArr.indexOf(id);
-      this.like.likedBool[id] = false;
-      this.like.likedArr.splice(t, 1)
-      console.log(t)
-    }
-    let forStorage = JSON.stringify(this.like.likedArr)
-    localStorage.setItem("liked", forStorage);
-    let outStorage:any = localStorage.getItem("liked")
-    this.like.liked = JSON.parse(outStorage).length;
-    console.log(localStorage.getItem("liked"))
+  shopLike(p: any) {
+    const id = (p.target as HTMLElement).closest('button')?.id;
+    if (id) {
+      if (!this.like.likedArr.includes(id)) {
+        this.like.likedArr.push(id)
+        this.like.likedBool[id] = true;
+      }else{
+        let t = this.like.likedArr.indexOf(id);
+        this.like.likedBool[id] = false;
+        this.like.likedArr.splice(t, 1)
+        console.log(t)
+      }
+      let forStorage = JSON.stringify(this.like.likedArr)
+      localStorage.setItem("liked", forStorage);
+      let outStorage:any = localStorage.getItem("liked")
+      this.like.liked = JSON.parse(outStorage).length;
+    } 
   }
 
 

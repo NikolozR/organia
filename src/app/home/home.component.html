@@ -356,7 +356,7 @@
                         <div class="inside">
                             <div class="green-title">BEST PACKAGE</div>
                             <div class="percent">
-                                <span>{{offers[1].specialOfferPercent}}</span>
+                                <span>{{offers[1]?.specialOfferPercent}}</span>
                                 <div class="off">
                                     <p>%</p>
                                     <p>OFF</p>
@@ -364,13 +364,13 @@
                             </div>
                         </div>
                     </div>
-                    <img [src]="offers[1].imgURL" alt="">
+                    <img [src]="offers[1]?.imgURL" alt="">
                     <div class="offer-ting">
                         <span>SPECIAL OFFER</span>
                     </div>
                     <div class="content">
-                        <h2>{{offers[1].specialOfferTitle}}</h2>
-                        <p>{{offers[1].specialOfferDesc}}</p>
+                        <h2>{{offers[1]?.specialOfferTitle}}</h2>
+                        <p>{{offers[1]?.specialOfferDesc}}</p>
                         <div class="view-all">
                             View All
                             <div class="arrow-circle">
