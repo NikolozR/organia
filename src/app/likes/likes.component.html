@@ -2,6 +2,14 @@
     <div class="my-row" *ngIf="likedProds.length != 0;else noProduct">
         <div class="my-col" *ngFor="let prod of likedProds; index as i">
             <div class="prod-card">
+                <div class="hover-ting">
+                    <div class="view-details" [routerLink]="['/details', prod.category, prod.id]">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <div class="add-cart" (click)="addCart(prod.id)">
+                        <i class="bi bi-bag"></i>
+                    </div>
+                </div>
                 <div class="fresh" *ngIf="prod.isFresh">
                     FRESH
                 </div>

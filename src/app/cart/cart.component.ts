@@ -62,6 +62,7 @@ export class CartComponent implements OnInit {
         }
       })
     })
+    localStorage.setItem('cart', JSON.stringify(this.cart.cartArr))
   }
 
 

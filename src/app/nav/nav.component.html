@@ -43,8 +43,8 @@
                 </div>
                 <div class="nav-btns">
                     <button class="profile-btn"><i class="bi bi-person"></i></button>
-                    <button class="like-btn" [routerLink]="['/likes']"  [ngClass]="{'active': like.liked != 0}"><i class="bi bi-heart"></i> <div class="likes" *ngIf="like.liked != 0">{{like.liked}}</div></button>
-                    <button class="shop-cart-btn" [routerLink]="['/cart']" [ngClass]="{'active': like.carted != 0}"><i class="bi bi-bag"></i><div class="carts" *ngIf="like.carted != 0">{{like.carted}}</div></button>
+                    <button class="like-btn" [routerLink]="['/likes']"  [ngClass]="{'active': like.liked && like.liked != 0}"><i class="bi bi-heart"></i> <div class="likes" *ngIf="like.liked != 0 && like.liked">{{like.liked}}</div></button>
+                    <button class="shop-cart-btn" [routerLink]="['/cart']" [ngClass]="{'active': like.carted && like.carted != 0}"><i class="bi bi-bag"></i><div class="carts" *ngIf="like.carted != 0 && like.carted">{{like.carted}}</div></button>
                 </div>
             </div>
         </div>

@@ -1,140 +1,156 @@
 [
-    {
-      "objectTitle": "header",
-      "gallery": [
-        {
-          "imgID": 0,
-          "imgURL": "../../assets/imgs/backgroundHeader1.jpg"
-        },
-        {
-          "imgID": 1,
-          "imgURL": "../../assets/imgs/backgroundHeader2.jpg"
-        },
-        {
-          "imgID": 2,
-          "imgURL": "../../assets/imgs/backgroundHeader3.jpg"
-        }
-      ],
-      "paragraphText": "Apparently we had reached a great height in the atmosphere, was a dead black, and the stars had ceased to twinkle."
+  {
+    "objectTitle": "header",
+    "gallery": [
+      {
+        "imgID": 0,
+        "imgURL": "../../assets/imgs/backgroundHeader1.jpg"
+      },
+      {
+        "imgID": 1,
+        "imgURL": "../../assets/imgs/backgroundHeader2.jpg"
+      },
+      {
+        "imgID": 2,
+        "imgURL": "../../assets/imgs/backgroundHeader3.jpg"
+      }
+    ],
+    "paragraphText": "Apparently we had reached a great height in the atmosphere, was a dead black, and the stars had ceased to twinkle."
+  },
+  {
+    "objectTitle": "benefits",
+    "galleryAndContent": [
+      {
+        "imgID": 0,
+        "imgURL": "../../assets/imgs/starterOption.png",
+        "header": "Pick a Starter Option",
+        "description": "Nam commodo suscipit quam. Nunc nulla Aenan ul eros el nisl sagilie"
+      },
+      {
+        "imgID": 1,
+        "imgURL": "../../assets/imgs/houseOptions.png",
+        "header": "Wait for Delivery",
+        "description": "Nam commodo suscipit quam. Nunc nulla Aenan ul eros el nisl sagilie"
+      },
+      {
+        "imgID": 2,
+        "imgURL": "../../assets/imgs/medalOptions.png",
+        "header": "Deliver a Great Product",
+        "description": "Nam commodo suscipit quam. Nunc nulla Aenan ul eros el nisl sagilie"
+      },
+      {
+        "imgID": 3,
+        "imgURL": "../../assets/imgs/jarOptions.png",
+        "header": "Choose Product",
+        "description": "Nam commodo suscipit quam. Nunc nulla Aenan ul eros el nisl sagilie"
+      }
+    ]
+  },
+  {
+    "objectTitle": "blackFriday",
+    "contentHeader": "Organic Orange Juice",
+    "contentHeaderMain": "40% Flat",
+    "description": "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle."
+  },
+  {
+    "objectTitle": "newProducts",
+    "content": [
+      {
+        "id": 0,
+        "productName": "Vegan Egg Replacer",
+        "category": "vegetables",
+        "imgURL": "../../assets/imgs/shopTomato.png",
+        "stars": 4,
+        "starVotes": 23,
+        "price": 280,
+        "salesPrice": 200,
+        "isFresh": true,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
     },
     {
-      "objectTitle": "benefits",
-      "galleryAndContent": [
-        {
-          "imgID": 0,
-          "imgURL": "../../assets/imgs/starterOption.png",
-          "header": "Pick a Starter Option",
-          "description": "Nam commodo suscipit quam. Nunc nulla Aenan ul eros el nisl sagilie"
-        },
-        {
-          "imgID": 1,
-          "imgURL": "../../assets/imgs/houseOptions.png",
-          "header": "Wait for Delivery",
-          "description": "Nam commodo suscipit quam. Nunc nulla Aenan ul eros el nisl sagilie"
-        },
-        {
-          "imgID": 2,
-          "imgURL": "../../assets/imgs/medalOptions.png",
-          "header": "Deliver a Great Product",
-          "description": "Nam commodo suscipit quam. Nunc nulla Aenan ul eros el nisl sagilie"
-        },
-        {
-          "imgID": 3,
-          "imgURL": "../../assets/imgs/jarOptions.png",
-          "header": "Choose Product",
-          "description": "Nam commodo suscipit quam. Nunc nulla Aenan ul eros el nisl sagilie"
-        }
-      ]
+        "id": 1,
+        "productName": "Vegan Egg Replacer",
+        "category": "vegetables",
+        "imgURL": "../../assets/imgs/shopRoot.png",
+        "stars": 4,
+        "starVotes": 23,
+        "price": 280,
+        "salesPrice": 260,
+        "isFresh": true,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
     },
     {
-      "objectTitle": "blackFriday",
-      "contentHeader": "Organic Orange Juice",
-      "contentHeaderMain": "40% Flat",
-      "description": "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle."
+        "id": 2,
+        "productName": "Vegan Egg Replacer",
+        "category": "vegetables",
+        "imgURL": "../../assets/imgs/shopBasket.png",
+        "stars": 4,
+        "starVotes": 23,
+        "price": 280,
+        "salesPrice": 160,
+        "isFresh": true,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
     },
     {
-      "objectTitle": "newProducts",
-      "content": [
-        {
-          "productID": 0,
-          "isFresh": true,
-          "productName": "Vegan Egg",
-          "price": 280,
-          "salePrice": 200,
-          "stars": 2,
-          "starVotes": 4,
-          "imgURL": "../../assets/imgs/tomato.png"
-        },
-        {
-          "productID": 1,
-          "isFresh": true,
-          "productName": "Vegan Egg Replacer",
-          "price": 200,
-          "salePrice": 200,
-          "stars": 4,
-          "starVotes": 41,
-          "imgURL": "../../assets/imgs/onion.png"
-        },
-        {
-          "productID": 2,
-          "isFresh": true,
-          "productName": "Vegan Egg Replacer",
-          "price": 280,
-          "salePrice": 200,
-          "stars": 3,
-          "starVotes": 16,
-          "imgURL": "../../assets/imgs/basket.png"
-        },
-        {
-          "productID": 3,
-          "isFresh": true,
-          "productName": "Vegan Egg Replacer",
-          "price": 280,
-          "salePrice": 200,
-          "stars": 4,
-          "starVotes": 10,
-          "imgURL": "../../assets/imgs/tomato.png"
-        },
-        {
-          "productID": 4,
-          "isFresh": true,
-          "productName": "Vegan Egg Replacer",
-          "price": 280,
-          "salePrice": 200,
-          "stars": 5,
-          "starVotes": 24,
-          "imgURL": "../../assets/imgs/onion.png"
-        },
-        {
-          "productID": 5,
-          "isFresh": true,
-          "productName": "Vegan Egg Replacer",
-          "price": 280,
-          "salePrice": 200,
-          "stars": 4,
-          "starVotes": 43,
-          "imgURL": "../../assets/imgs/tomato.png"
-        },
-        {
-          "productID": 6,
-          "isFresh": true,
-          "productName": "Vegan Egg Replacer",
-          "price": 280,
-          "salePrice": 200,
-          "stars": 4,
-          "starVotes": 5,
-          "imgURL": "../../assets/imgs/basket.png"
-        },
-        {
-          "productID": 7,
-          "isFresh": true,
-          "productName": "Vegan Egg Replacer",
-          "price": 280,
-          "salePrice": 200,
-          "stars": 4,
-          "starVotes": 5,
-          "imgURL": "../../assets/imgs/onion.png"
-        }        
-      ]
+        "id": 3,
+        "productName": "Vegan Egg Replacer",
+        "category": "vegetables",
+        "imgURL": "../../assets/imgs/shopBanana.png",
+        "stars": 4,
+        "starVotes": 23,
+        "price": 280,
+        "salesPrice": 280,
+        "isFresh": true,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
+    },
+    {
+        "id": 4,
+        "productName": "Vegan Egg Replacer",
+        "category": "vegetables",
+        "imgURL": "../../assets/imgs/shopGreen.png",
+        "stars": 4,
+        "starVotes": 23,
+        "price": 280,
+        "salesPrice": 240,
+        "isFresh": true,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
+    },
+    {
+        "id": 5,
+        "productName": "Vegan Egg Replacer",
+        "category": "vegetables",
+        "imgURL": "../../assets/imgs/shopPepper.png",
+        "stars": 4,
+        "starVotes": 23,
+        "price": 280,
+        "salesPrice": 280,
+        "isFresh": true,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
+    },
+    {
+        "id": 6,
+        "productName": "Vegan Egg Replacer",
+        "category": "vegetables",
+        "imgURL": "../../assets/imgs/shopAppNOrange.png",
+        "stars": 4,
+        "starVotes": 23,
+        "price": 280,
+        "salesPrice": 200,
+        "isFresh": true,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
+    },
+    {
+        "id": 7,
+        "productName": "Vegan Egg Replacer",
+        "category": "vegetables",
+        "imgURL": "../../assets/imgs/shopApple.png",
+        "stars": 4,
+        "starVotes": 23,
+        "price": 280,
+        "salesPrice": 200,
+        "isFresh": true,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
     }
-  ]
+    ]
+  }
+]

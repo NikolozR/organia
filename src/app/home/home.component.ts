@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service'
+import { ShopService } from '../shop.service';
+import { LikedAndCartService } from '../liked-and-cart.service';
 // import Swiper core and required modules
 
 
@@ -15,12 +17,24 @@ import { HomeService } from '../home.service'
 export class HomeComponent implements OnInit {
 
 
-  constructor(private homeService: HomeService) { }
+  constructor(private homeService: HomeService, public like: LikedAndCartService, private service:ShopService) { }
 
 
   products:any = [];
   myProducts:any = [];
-  shownProducts:any = [];
+  shownProducts: any = [];
+  
+  shownNumber = 9;
+  carouselData:any = [];
+  leftOver:number = 0;
+  pageNumber:number = 0;
+  everyProduct:any = [];
+  starsAndSale:any = [];
+  prodIsShown:any = [];
+  pages:any = [];
+  carouselBoos:any = [];
+  rightAllowed:boolean = false;
+  leftAllowed:boolean = false;
 
   homePage: any = [];
   workers:any = [];
@@ -81,10 +95,10 @@ export class HomeComponent implements OnInit {
     let localMin = this.shownSwiper.indexOf(this.min(this.shownSwiper))
     this.shownSwiper[localMin] = this.max(this.shownSwiper) + 1;
     this.newProducts?.forEach((el: any) => {
-      if (this.shownSwiper.includes(el.productID)) {
-        this.everyProdSwiper[el.productID] = true;
+      if (this.shownSwiper.includes(el.id)) {
+        this.everyProdSwiper[el.id] = true;
       } else {
-        this.everyProdSwiper[el.productID] = false;
+        this.everyProdSwiper[el.id] = false;
       }
     });
     this.shownMax = this.max(this.shownSwiper)
@@ -97,10 +111,10 @@ export class HomeComponent implements OnInit {
     this.shownMax = this.max(this.shownSwiper)
     this.shownMin = this.min(this.shownSwiper)
     this.newProducts?.forEach((el: any) => {
-      if (this.shownSwiper.includes(el.productID)) {
-        this.everyProdSwiper[el.productID] = true;
+      if (this.shownSwiper.includes(el.id)) {
+        this.everyProdSwiper[el.id] = true;
       } else {
-        this.everyProdSwiper[el.productID] = false;
+        this.everyProdSwiper[el.id] = false;
       }
     });
   }
@@ -110,6 +124,30 @@ export class HomeComponent implements OnInit {
   // new products logic!!!!!!!!!!!!!!!!!END
 
   blackFriday: any = [];
+
+  addCart(p:any){
+    console.log(p)
+    if (!this.like.cartBool[p]) {
+      let obj = {
+        "id": p,
+        "count": 1
+      }
+      this.like.cartArr.push(obj);
+      this.like.cartBool[p] = true;
+      let forStorage:any = JSON.stringify(this.like.cartArr);
+      localStorage.setItem("cart", forStorage);
+    }else{
+      this.like.cartArr.forEach((el:any) => {
+        if (el.id == p){
+          el.count++;
+        }
+      })
+      let forJSON = JSON.stringify(this.like.cartArr);
+      localStorage.setItem("cart", forJSON)
+    }
+    this.like.carted = this.like.cartArr.length;
+  }
+
 
 
   smallFilterFunct(p:any){
@@ -160,6 +198,7 @@ export class HomeComponent implements OnInit {
     this.countDownTimer();
     // REQUEST FOR HEADERS/BENEFITS/NEWPRODUCTS !!!!!!!!!
     this.homeService.GetData().subscribe((p) => {
+      console.log(p, "ASFAFDSAG");
       this.homePage = p;
       //HEADERS GALLERY VARIABLES!!!!!!!!!!! START
       //HEADERS GALLERY VARIABLES!!!!!!!!!!! START
@@ -192,15 +231,16 @@ export class HomeComponent implements OnInit {
       this.newProducts = this.homePage.find((el: any) => {
         return el.objectTitle == "newProducts"
       })?.content
+      console.log(this.newProducts, "SAFADF")
       this.leng = this.newProducts?.length ?? 0;
       this.newProducts?.forEach((el: any) => {
         this.everyProdSwiper.push(false);
       });
       this.newProducts?.forEach((el: any) => {
-        if (this.shownSwiper.includes(el.productID)) {
-          this.everyProdSwiper[el.productID] = true;
+        if (this.shownSwiper.includes(el.id)) {
+          this.everyProdSwiper[el.id] = true;
         } else {
-          this.everyProdSwiper[el.productID] = false;
+          this.everyProdSwiper[el.id] = false;
         }
       });
 
@@ -216,16 +256,16 @@ export class HomeComponent implements OnInit {
         })
       });
       this.newProducts?.forEach((el: any) => {
-        let id = el.productID
+        let id = el.id
         for (let i = 0; i < el.stars; i++) {
           this.newProdSales[id].stars[i] = true;
         }
       });
       this.newProducts?.forEach((el: any) => {
-        if (el.price != el.salePrice) {
-          let saleId: any = el.productID;
+        if (el.price != el.salesPrice) {
+          let saleId: any = el.id;
           this.newProdSales[saleId].isSale = true;
-          this.newProdSales[saleId].percent = (Number(((el.price - el.salePrice) / el.price).toFixed(2)) * 100).toFixed(0);
+          this.newProdSales[saleId].percent = (Number(((el.price - el.salesPrice) / el.price).toFixed(2)) * 100).toFixed(0);
         }
       });
       // stars and sales data!!!!!! END
@@ -260,10 +300,10 @@ export class HomeComponent implements OnInit {
         }
       })
       this.products?.forEach((el:any) => {
-        if (el.price != el.salePrice) {
+        if (el.price != el.salesPrice) {
           let saleId: any = el.id;
           this.myProducts[saleId].isSale = true;
-          this.myProducts[saleId].percent = (Number(((el.price - el.salePrice) / el.price).toFixed(2)) * 100).toFixed(0);
+          this.myProducts[saleId].percent = (Number(((el.price - el.salesPrice) / el.price).toFixed(2)) * 100).toFixed(0);
         }
       });
       // general stars: coutns stars and calculates sales!!!!END
@@ -272,8 +312,64 @@ export class HomeComponent implements OnInit {
       // general stars: coutns stars and calculates sales!!!!END
     })
   
+    // REQUEST FOR EVERY PRODUCT !!!!!!!!
+    this.service.GetAllProductData().subscribe((p: any) => {
+      this.everyProduct = p;
+      this.service.everyProd = p;
 
+      this.everyProduct.forEach((el:any) => {
+        let isSale:any = '';
+        let percent:number = 0;
+        if (el.price != el.salesPrice) {
+            isSale = true;
+        }else{
+            isSale = false;
+        }
+        if (isSale) {
+          percent = Math.floor(((el.price - el.salesPrice) / el.price) * 100);
+        } else {
+          percent = 0;
+        }
+        this.starsAndSale.push({
+          stars: [false, false, false, false, false],
+          isSale: isSale,
+          percent: percent
+        })
+      });
 
+      this.everyProduct.forEach((el:any) => {
+        let x = el.stars;
+        let id = el.id;
+        for (let i = 0; i < x; i++) {
+          this.starsAndSale[id].stars[i] = true;
+        }
+      })
+
+      this.everyProduct.forEach((el:any) => {
+          this.like.likedBool.push(false);
+      });
+      this.everyProduct.forEach((el:any) => {
+        this.like.cartBool.push(false);
+      })
+
+      
+      this.leftOver = this.everyProduct.length % this.shownNumber;
+      this.pageNumber = ((this.everyProduct.length - this.leftOver) / this.shownNumber) + 1;
+      for (let i = 0; i < this.pageNumber; i++){
+        this.pages.push(false)
+      }
+      this.pages[0] = true;
+      for (let i = 0; i < this.everyProduct.length; i++) {
+        this.prodIsShown.push(false);
+      }
+      for (let i = 0; i < this.prodIsShown.length; i++) {
+        if (this.pages.indexOf(true) == 0){
+          if(i >= 0 && i < this.shownNumber){
+            this.prodIsShown[i] = true;
+          }
+        }
+      }
+    })
 
 
     // REQUEST FOR SMALL FILTER CATEGORIES !!!!!!!

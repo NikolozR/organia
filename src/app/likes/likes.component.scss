@@ -67,6 +67,48 @@
                             display: flex;
                             justify-content: center;
                             width: 100%;
+                            &:hover {
+                                .hover-ting {
+                                    display: flex;
+                                    gap: 7px;
+                                }
+        
+                            .inside {
+                                    .img-can {
+                                        img {
+                                            opacity: 0.4;
+                                        }
+                                    }
+                                }
+                            }
+                            .hover-ting {
+                                display: none;
+                                position: absolute;
+                                z-index: 1000000;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+        
+                                div {
+                                    width: 50px;
+                                    height: 50px;
+                                    border-radius: 50%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    cursor: pointer;
+                                }
+        
+                                .view-details {
+                                    background-color: white;
+                                    color: black;
+                                }
+        
+                                .add-cart {
+                                    background-color: #62a404;
+                                    color: white;
+                                }
+                            }
                             .fresh {
                                 @include fresh();
                             }

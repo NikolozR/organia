@@ -73,7 +73,15 @@
                 <div class="col-lg-4" *ngFor="let prod of newProducts; index as i"
                     [ngClass]="{'hidden': !everyProdSwiper[i]}">
                     <div class="new-prod-card" id="{{i}}">
-                        <img src="{{prod.imgURL}}" alt="">
+                        <div class="hover-ting">
+                            <div class="view-details" [routerLink]="['/details', prod.category, prod.id]">
+                                <i class="bi bi-search"></i>
+                            </div>
+                            <div class="add-cart" (click)="addCart(prod.id)">
+                                <i class="bi bi-bag"></i>
+                            </div>
+                        </div>
+                        <img class="new-prod-img" src="{{prod.imgURL}}" alt="">
                         <div class="gray-back">
                             <div class="fresh" *ngIf="prod.isFresh">
                                 FRESH
@@ -95,7 +103,7 @@
                             </div>
                             <div class="prod-price">
                                 <p class="price" [ngClass]="{'overline': newProdSales[i].isSale}">${{prod.price}}</p>
-                                <p class="saled-price" *ngIf="newProdSales[i].isSale">${{prod.salePrice}}</p>
+                                <p class="saled-price" *ngIf="newProdSales[i].isSale">${{prod.salesPrice}}</p>
                             </div>
                         </div>
                     </div>
@@ -105,7 +113,7 @@
                 [disabled]="!((shownMax) < (leng - 1))" (click)="rightFunct()">
                 <i class="bi bi-arrow-right-short"></i>
             </button>
-            <div class="view-all">
+            <div class="view-all" [routerLink]="['/shop']">
                 View All
                 <div class="arrow-circle">
                     <i class="bi bi-arrow-right"></i>
@@ -124,7 +132,7 @@
                     <h4 class="mb-0">BLACK FRIDAY OFFER</h4>
                     <h1>{{blackFriday?.contentHeader}} <span>{{blackFriday?.contentHeaderMain}}</span></h1>
                     <p>{{blackFriday?.description}}</p>
-                    <div class="view-all">
+                    <div class="view-all" [routerLink]="['/shop']">
                         View All
                         <div class="arrow-circle">
                             <i class="bi bi-arrow-right"></i>
@@ -157,6 +165,14 @@
         <div class="row products-row">
             <div class="col-lg-3" *ngFor="let product of shownProducts; index as i">
                 <div class="prod-card">
+                    <div class="hover-ting">
+                        <div class="view-details" [routerLink]="['/details', product.category, product.id]">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <div class="add-cart" (click)="addCart(product.id)">
+                            <i class="bi bi-bag"></i>
+                        </div>
+                    </div>
                     <img [src]="product.imgURL" alt="">
                     <div class="gray-back">
                         <div class="fresh" *ngIf="product.isFresh">
@@ -178,7 +194,7 @@
                         </div>
                         <div class="prod-price">
                             <p class="price" [ngClass]="{'overline': myProducts[i].isSale}">${{product.price}}</p>
-                            <p class="saled-price" *ngIf="myProducts[i].isSale">${{product.salePrice}}</p>
+                            <p class="saled-price" *ngIf="myProducts[i].isSale">${{product.salesPrice}}</p>
                         </div>
                     </div>
                 </div>
@@ -344,7 +360,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="view-all">View All
+                <div class="view-all" [routerLink]="['/shop']">View All
                     <div class="arrow-circle">
                         <i class="bi bi-arrow-right"></i>
                     </div>
@@ -371,7 +387,7 @@
                     <div class="content">
                         <h2>{{offers[1]?.specialOfferTitle}}</h2>
                         <p>{{offers[1]?.specialOfferDesc}}</p>
-                        <div class="view-all">
+                        <div class="view-all" [routerLink]="['/shop']">
                             View All
                             <div class="arrow-circle">
                                 <i class="bi bi-arrow-right"></i>
