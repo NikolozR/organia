@@ -358,15 +358,35 @@ header {
             .row {
                 width: auto;
                 margin: auto;
-                padding-bottom: 57px;
-                gap: 30px;
+                gap: 20px;
                 justify-content: center;
+                padding: 0 40px 57px;
+                @media screen and (max-width: 768px) {
+                    gap: 0;
+                    row-gap: 30px;
+                    padding: 0 70px 57px;
+                }
 
-                .col-lg-4 {
+                .col-xl-4 {
                     position: relative;
-                    width: fit-content;
+                    flex: 0 0 calc(100% / 3 - 20px); // Large screens
+                    max-width: calc(100% / 3 - 20px);
+
+                    @media screen and (max-width: 1200px) {
+                        flex: 0 0 calc(100% / 2 - 20px); // Large screens
+                        max-width: calc(100% / 2 - 20px);
+                    }
+                    @media screen and (max-width: 768px) {
+                        flex: 0 0 calc(100% ); // Large screens
+                        max-width: calc(100%);
+                    }
+
 
                     .new-prod-card {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
                         .hover-ting {
                             display: none;
                             position: absolute;
@@ -401,16 +421,16 @@ header {
                                 display: flex;
                                 gap: 7px;
                             }
-
-
-                            img {
+                            .new-prod-img {
                                 opacity: 0.4;
                             }
 
                         }
 
                         img {
-                            object-fit: cover;
+                            width: 250px;
+                            height: 250px;
+                            object-fit: contain;
                             object-position: center;
                             position: absolute;
                             top: 60px;
@@ -453,7 +473,7 @@ header {
                             background-color: white;
                             border-radius: 15px;
                             padding: 87px 110px 28px 40px;
-
+                            flex: 1;
                             .stars {
                                 color: #a5a5a5;
                                 font-size: 11px;
@@ -470,8 +490,6 @@ header {
                             .product-name {
                                 font-weight: bolder;
                                 font-size: 20px;
-                                width: 203px;
-                                max-width: 100%;
                             }
 
                             .prod-price {
@@ -748,9 +766,11 @@ header {
 
             .col-lg-3 {
                 position: relative;
-                width: auto; // Adjust card width for consistent grid layout
-
+                width: auto;
                 .prod-card {
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
                     .hover-ting {
                         display: none;
                         position: absolute;
@@ -794,12 +814,13 @@ header {
                     }
 
                     img {
-                        object-fit: cover;
                         object-position: center;
                         position: absolute;
-                        top: 70px;
+                        top: 50px;
                         left: 50%;
-                        width: 270px;
+                        width: 250px;
+                        height: 250px;
+                        object-fit: contain;
                         background: transparent;
                         z-index: 21;
                         transform: translateX(-50%);
@@ -828,7 +849,7 @@ header {
                         border: 2px solid #eaeaea;
                         border-radius: 15px;
                         padding: 87px 69px 28px 34px;
-
+                        flex: 1;
                         .stars {
                             color: #a5a5a5;
                             font-size: 11px;

@@ -70,7 +70,7 @@
                 <i class="bi bi-arrow-left-short"></i>
             </button>
             <div class="row">
-                <div class="col-lg-4" *ngFor="let prod of newProducts; index as i"
+                <div class="col-12 col-lg-6 col-xl-4" *ngFor="let prod of newProducts; index as i"
                     [ngClass]="{'hidden': !everyProdSwiper[i]}">
                     <div class="new-prod-card" id="{{i}}">
                         <div class="hover-ting">
@@ -99,7 +99,7 @@
                                 ({{prod.starVotes}})
                             </div>
                             <div class="product-name">
-                                <p>{{prod.productName}} {{i}}</p>
+                                <p>{{prod.productName}}</p>
                             </div>
                             <div class="prod-price">
                                 <p class="price" [ngClass]="{'overline': newProdSales[i].isSale}">${{prod.price}}</p>

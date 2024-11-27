@@ -68,6 +68,9 @@ p {
             align-items: center;
             .main-logo {
                 padding-top: 27px;
+                img {
+                    cursor: pointer;
+                }
             }
             .search-btns {
                 display: flex;
