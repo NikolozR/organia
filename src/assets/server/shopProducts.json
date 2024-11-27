@@ -134,7 +134,7 @@
     {
         "id": 11,
         "productName": "Organic Carrots",
-        "category": "Fresh Organic",
+        "category": "Vegetables",
         "imgURL": "../../assets/imgs/shopCarrots.png",
         "stars": 5,
         "starVotes": 38,
@@ -146,7 +146,7 @@
     {
         "id": 12,
         "productName": "Organic Avocado",
-        "category": "Fresh Organic",
+        "category": "Fresh Fruits",
         "imgURL": "../../assets/imgs/shopAvocado.png",
         "stars": 5,
         "starVotes": 60,

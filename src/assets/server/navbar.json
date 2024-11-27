@@ -1,7 +1,7 @@
 [
     {
       "objectTitle": "support",
-      "phoneNumber": "+90 157 058 4567"
+      "phoneNumber": "+995 551 741 155"
     },
     {
       "objectTitle": "categories",
@@ -17,26 +17,6 @@
         {
           "categoryName": "Beverages",
           "categoryLogo": "./assets/imgs/beveragesLogo.png"
-        },
-        {
-          "categoryName": "Babies & Kids", 
-          "categoryLogo": "./assets/imgs/babiesLogo.png"
-        },
-        {
-          "categoryName": "Frozen Foods", 
-          "categoryLogo": "./assets/imgs/frozenLogo.png"
-        },
-        {
-          "categoryName": "SuperFoods & Greens", 
-          "categoryLogo": "./assets/imgs/superfoodLogo.png"
-        },
-        {
-          "categoryName":  "Fresh Tomatoes",
-          "categoryLogo": "./assets/imgs/sokoLogo.png"
-        },
-        {
-          "categoryName": "Fresh Nut and Seed",
-          "categoryLogo": "./assets/imgs/nutLogo.png"
         },
         {
           "categoryName": "Fresh Organic",

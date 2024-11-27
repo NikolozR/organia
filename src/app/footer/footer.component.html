@@ -32,7 +32,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="inside-organia">
-                    <img src="../../assets/imgs/footerMainLogo.png" alt="">
+                    <img src="../../assets/imgs/footerMainLogo.png" style="cursor: pointer;" alt="" [routerLink]="['/']" [fragment]="'home'">
                     <div class="organia-content">
                         <p>There are many variations of passages of lorem ipsum available.</p>
                     </div>
@@ -74,7 +74,7 @@
                         <div class="col-lg-6">
                             <p>Delivery Information</p>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" [routerLink]="['/cart']" [fragment]="'cart'">
                             <p>Shopping Cart</p>
                         </div>
                         <div class="col-lg-6">

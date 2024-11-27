@@ -5,6 +5,13 @@
             border-bottom: 1px solid #2f2f2f;
             .col-lg-4 {
                 padding-bottom: 60px;
+                .customers {
+                    .row {
+                        .col-lg-6 {
+                            cursor: pointer;
+                        }
+                    }
+                }
             }
             .col-lg-4:first-child {
                 border-right: 1px solid #2f2f2f;

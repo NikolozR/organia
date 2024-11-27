@@ -14,6 +14,7 @@ const routes: Routes = [
     path: "",
     component: HomeComponent
   },
+  { path: '', redirectTo: '/shop', pathMatch: 'full' },
   {
     path: 'shop',
     component: ShopComponent
@@ -39,7 +40,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    scrollPositionRestoration: 'top',
     anchorScrolling: 'enabled'
   })],
   exports: [RouterModule]

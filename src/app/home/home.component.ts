@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
+
 import { HomeService } from '../home.service'
 import { ShopService } from '../shop.service';
 import { LikedAndCartService } from '../liked-and-cart.service';
@@ -17,7 +20,9 @@ import { LikedAndCartService } from '../liked-and-cart.service';
 export class HomeComponent implements OnInit {
 
 
-  constructor(private homeService: HomeService, public like: LikedAndCartService, private service:ShopService) { }
+  constructor(private homeService: HomeService, public like: LikedAndCartService, private service:ShopService, private router: Router,
+    private route: ActivatedRoute,
+    private scroller: ViewportScroller) { }
 
 
   products:any = [];
@@ -107,7 +112,6 @@ export class HomeComponent implements OnInit {
   leftFunct() {
     let localMax = this.shownSwiper.indexOf(this.shownMax);
     this.shownSwiper[localMax] = this.min(this.shownSwiper) - 1;
-    console.log(this.shownSwiper)
     this.shownMax = this.max(this.shownSwiper)
     this.shownMin = this.min(this.shownSwiper)
     this.newProducts?.forEach((el: any) => {
@@ -126,7 +130,6 @@ export class HomeComponent implements OnInit {
   blackFriday: any = [];
 
   addCart(p:any){
-    console.log(p)
     if (!this.like.cartBool[p]) {
       let obj = {
         "id": p,
@@ -150,19 +153,16 @@ export class HomeComponent implements OnInit {
 
 
 
-  smallFilterFunct(p:any){
-    this.shownProducts = this.products
-    let x = p.path[0].id;
+  smallFilterFunct(p: number){
+    this.shownProducts = this.products;
     for (let i = 0; i < this.filterCategoryAct.length; i++) {
       this.filterCategoryAct[i] = false; 
     }
-    this.filterCategoryAct[x] = true;
-    if (x != 0) {
+    this.filterCategoryAct[p] = true;
+    if (p != 0) {
       this.shownProducts = this.shownProducts.filter((el:any) => {
-        return el.category == this.smallFilter[x].toLowerCase();
+        return el.category.toLowerCase() == this.smallFilter[p].toLowerCase();
       })
-      console.log(this.smallFilter[x].toLowerCase(), this.shownProducts)
-      
     }else{
       this.homeService.GetProdData().subscribe((p) => {
         this.shownProducts = p;
@@ -195,10 +195,19 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // Scroll to 'products' anchor when navigating from another page
+    this.router.events.subscribe((event: any) => {
+      if (event.constructor.name === 'NavigationEnd') {
+        const fragment = this.route.snapshot.fragment;
+        if (fragment === 'home') {
+          this.scroller.scrollToAnchor('home');
+        }
+      }
+    });
+
     this.countDownTimer();
     // REQUEST FOR HEADERS/BENEFITS/NEWPRODUCTS !!!!!!!!!
     this.homeService.GetData().subscribe((p) => {
-      console.log(p, "ASFAFDSAG");
       this.homePage = p;
       //HEADERS GALLERY VARIABLES!!!!!!!!!!! START
       //HEADERS GALLERY VARIABLES!!!!!!!!!!! START
@@ -231,7 +240,6 @@ export class HomeComponent implements OnInit {
       this.newProducts = this.homePage.find((el: any) => {
         return el.objectTitle == "newProducts"
       })?.content
-      console.log(this.newProducts, "SAFADF")
       this.leng = this.newProducts?.length ?? 0;
       this.newProducts?.forEach((el: any) => {
         this.everyProdSwiper.push(false);

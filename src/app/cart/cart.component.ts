@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LikedAndCartService } from '../liked-and-cart.service';
 import { ShopService } from '../shop.service';
+import { FooterService } from '../footer.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +12,9 @@ import { ShopService } from '../shop.service';
 })
 export class CartComponent implements OnInit {
 
-  constructor(public cart:LikedAndCartService, private service:ShopService) { }
+  constructor(public cart:LikedAndCartService, private service:ShopService, private router: Router,
+    private route: ActivatedRoute,
+    private scroller: ViewportScroller) { }
   chosenOnes:any = [];
   counts:any = [];
 
@@ -67,6 +72,14 @@ export class CartComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.router.events.subscribe((event: any) => {
+      if (event.constructor.name === 'NavigationEnd') {
+        const fragment = this.route.snapshot.fragment;
+        if (fragment === 'cart') {
+          this.scroller.scrollToAnchor('cart');
+        }
+      }
+    });
     this.service.GetAllProductData().subscribe((p:any) => {
       p.forEach((el:any) => {
         if (this.cart.cartBool[el.id]) {
@@ -80,8 +93,6 @@ export class CartComponent implements OnInit {
       this.cart.cartArr.forEach((el:any) => {
         this.counts[el.id] = el.count;
       })
-
-      console.log(this.counts)
     })
   }
 

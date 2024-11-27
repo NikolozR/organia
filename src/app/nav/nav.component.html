@@ -1,4 +1,4 @@
-<div class="nav-top">
+<div class="nav-top" id="home">
     <div class="container ps-0 pe-0">
         <div class="nav-top-row">
             <div class="left-nav-top">
@@ -28,18 +28,18 @@
     <div class="container ps-0 pe-0">
         <div class="middle-nav-row">
             <div class="main-logo">
-                <img src="./assets/imgs/croplogo.png" alt="" [routerLink]="['/']">
+                <img src="./assets/imgs/croplogo.png" alt="" [routerLink]="['/']" [fragment]="'home'">
             </div>
             <div class="search-btns">
                 <div class="search">
                     <input type="text" class="form-control" placeholder="Search Product">
-                    <div class="select-parent">
+                    <!-- <div class="select-parent">
                         <select name="search-category" [(ngModel)]="categoryVal" (change)="categorySelect()" id="search-category">
                             <option [value]="-1" >Select Categories</option>
-                            <option [value]="i" *ngFor="let searchCateg of categories; index as i" >{{searchCateg.categoryName}}</option>
+                            <option [value]="i" *ngFor="let searchCateg of categories; index as i">{{searchCateg.categoryName}}</option>
                         </select>
                         <i class="bi bi-chevron-down" *ngIf="!middleNavDrop"></i>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="nav-btns">
                     <button class="profile-btn"><i class="bi bi-person"></i></button>
@@ -68,7 +68,7 @@
             <div class="category-dropdown-par" *ngIf="categoryDropBool">
                 <div class="category-dropdown">
                     <ul class="category-ul" [ngClass]="{'category-ul-dropped': !others}">
-                        <li id="category{{i}}" *ngFor=" let categ of categories; index as i">
+                        <li id="category{{i}}" *ngFor=" let categ of categories; index as i" (click)="goToCategory(categ.categoryName.toLowerCase())">
                             <div class="categ-img-circle">
                                 <img src="{{categ.categoryLogo}}" alt="">
                             </div>
@@ -82,7 +82,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['']">Home</a>
+                        <a class="nav-link" [routerLink]="['']" [fragment]="'home'">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" [routerLink]="['/shop']">Shop</a>

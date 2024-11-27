@@ -61,19 +61,25 @@
             </div>
         </div>
     </div>
-    <div class="shop">
+    <div class="shop" id="products">
+        <div class="row filters-row">
+            <div class="col-lg-2" *ngFor="let category  of smallFilter; index as i">
+                <button type="button" [ngClass]="{'active': filterCategory.toLowerCase() === category.toLowerCase()}" id="{{i}}"
+                    (click)="navigateToCategory(category.toLowerCase())">{{category}}</button>
+            </div>
+        </div>
         <div class="row top-row g-5">
-            <div class="my-col col-lg-6 col-xl-4" [ngClass]="{'d-none': !prodIsShown[i]}" *ngFor="let prod of everyProduct; index as i">
+            <div class="my-col col-lg-6 col-xl-4" [ngClass]="{'d-none': !prodIsShown[i]}" *ngFor="let product of shownProducts; index as i" [hidden]="!prodIsShown[i]">
                 <div class="prod-card">
                     <div class="hover-ting">
-                        <div class="view-details" [routerLink]="['/details', prod.category, prod.id]">
+                        <div class="view-details" [routerLink]="['/details', product.category, product.id]">
                             <i class="bi bi-search"></i>
                         </div>
-                        <div class="add-cart" (click)="addCart(prod.id)">
+                        <div class="add-cart" (click)="addCart(product.id)">
                             <i class="bi bi-bag"></i>
                         </div>
                     </div>
-                    <div class="fresh" *ngIf="prod.isFresh">
+                    <div class="fresh" *ngIf="product.isFresh">
                         FRESH
                     </div>
                     <button class="like" id="{{i}}" [ngClass]="{'liked': like.likedBool[i]}" (click)="shopLike($event)">
@@ -82,7 +88,7 @@
                     </button>
                     <div class="inside">
                         <div class="img-can">
-                            <img [src]="prod.imgURL" alt="">
+                            <img [src]="product.imgURL" alt="">
                         </div>
                         <div class="card-content">
                             <div class="stars">
@@ -92,13 +98,13 @@
                                     [ngClass]="{' bi-star': !starsAndSale[i].stars[n]}"></i>
                             </div>
                             <div class="information">
-                                <p class="category">{{prod.category | titlecase}}</p>
-                                <p class="prod-name">{{prod.productName}}</p>
+                                <p class="category">{{product.category | titlecase}}</p>
+                                <p class="prod-name">{{product.productName}}</p>
                             </div>
                             <div class="price">
                                 <span class="real-price"
-                                    [ngClass]="{'overline': starsAndSale[i].isSale}">${{prod.price}}</span>
-                                <span class="saled-price" *ngIf="starsAndSale[i].isSale">${{prod.salesPrice}}</span>
+                                    [ngClass]="{'overline': starsAndSale[i].isSale}">${{product.price}}</span>
+                                <span class="saled-price" *ngIf="starsAndSale[i].isSale">${{product.salesPrice}}</span>
                             </div>
                         </div>
                     </div>
@@ -110,7 +116,7 @@
                 <i class="bi bi-arrow-left-short"></i>
             </button>
             <button class="btn-arrow" [ngClass]="{'active-arrow': pages[r]}" id="{{r}}"
-                *ngFor="let page of pages; index as r" (click)="buttonClicked($event)">
+                *ngFor="let page of pages; index as r" (click)="buttonClicked(r)">  
                 {{r + 1}}
             </button>
             <button class="prod-right" [disabled]="pages.indexOf(true) == pages.length - 1" (click)="rightPage()">

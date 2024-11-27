@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LikedAndCartService } from '../liked-and-cart.service';
 import { NavService } from '../nav.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -9,7 +10,7 @@ import { NavService } from '../nav.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private navService: NavService, public like: LikedAndCartService) { }
+  constructor(private navService: NavService, public like: LikedAndCartService, private router: Router) { }
   navDynamicInfo:any = [];
 
   middleNavDrop:boolean = false;
@@ -34,7 +35,9 @@ export class NavComponent implements OnInit {
     this.others = !this.others;
   }
 
-
+  goToCategory(category: string) {
+    this.router.navigate(['/shop'], { queryParams: { category } });
+  }
 
   categoryDropBool:boolean = false;
   chevronUpBool:boolean = false;

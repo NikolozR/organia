@@ -76,7 +76,6 @@ export class LikesComponent implements OnInit {
   ngOnInit(): void {
     this.allProds.GetAllProductData().subscribe((p: any) => {
       this.everyProds = p;
-      console.log(this.likedID);
       this.likedID.forEach((el: any) => {
         let x = this.everyProds.find((els: any) => {
           return els.id == el;
@@ -112,6 +111,5 @@ export class LikesComponent implements OnInit {
         }
       });
     });
-    console.log(this.starsAndSale);
   }
 }
