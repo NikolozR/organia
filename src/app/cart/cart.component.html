@@ -1,5 +1,5 @@
 <div class="container ps-0 pe-0">
-    <div class="top-row-par">
+    <div class="top-row-par" *ngIf="chosenOnes.length != 0;else noProduct">
         <div class="top-row">
             <div class="photo">
                 PHOTO
@@ -44,4 +44,20 @@
             </div>
         </div>
     </div>
+    <ng-template #noProduct>
+        <div class="container">
+            <div class="no-product">
+                <div class="zero">
+                    0
+                </div>
+                <p>You Do Not Have Liked Products</p>
+                <div class="view-all" [routerLink]="['/shop']">
+                    View Products
+                    <div class="arrow-circle">
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
 </div>

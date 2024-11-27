@@ -57,100 +57,64 @@
     "content": [
       {
         "id": 0,
-        "productName": "Vegan Egg Replacer",
-        "category": "vegetables",
-        "imgURL": "../../assets/imgs/shopTomato.png",
-        "stars": 4,
-        "starVotes": 23,
-        "price": 280,
-        "salesPrice": 200,
+        "productName": "Organic Almond Milk",
+        "category": "Beverages",
+        "imgURL": "../../assets/imgs/shopAlmondMilk.png",
+        "stars": 5,
+        "starVotes": 35,
+        "price": 150,
+        "salesPrice": 120,
         "isFresh": true,
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
-    },
-    {
+        "description": "Creamy and delicious almond milk made from organic almonds, perfect for smoothies and coffee. Packed with nutrients and low in calories."
+      },
+      {
         "id": 1,
-        "productName": "Vegan Egg Replacer",
-        "category": "vegetables",
-        "imgURL": "../../assets/imgs/shopRoot.png",
+        "productName": "Gluten-Free Bread",
+        "category": "Fresh Organic",
+        "imgURL": "../../assets/imgs/shopGlutenFreeBread.png",
         "stars": 4,
-        "starVotes": 23,
-        "price": 280,
-        "salesPrice": 260,
+        "starVotes": 42,
+        "price": 250,
+        "salesPrice": 200,
         "isFresh": true,
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
-    },
-    {
+        "description": "Soft and flavorful bread made without gluten. Ideal for sandwiches and toast, this bread is a great choice for a healthy diet."
+      },
+      {
         "id": 2,
-        "productName": "Vegan Egg Replacer",
-        "category": "vegetables",
-        "imgURL": "../../assets/imgs/shopBasket.png",
-        "stars": 4,
-        "starVotes": 23,
-        "price": 280,
-        "salesPrice": 160,
+        "productName": "Raw Honey",
+        "category": "Fresh Organic",
+        "imgURL": "../../assets/imgs/shopHoney.png",
+        "stars": 5,
+        "starVotes": 55,
+        "price": 300,
+        "salesPrice": 250,
         "isFresh": true,
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
-    },
-    {
+        "description": "Pure, unfiltered raw honey harvested from local apiaries. Perfect for tea, baking, or as a natural sweetener for breakfast."
+      },
+      {
         "id": 3,
-        "productName": "Vegan Egg Replacer",
-        "category": "vegetables",
-        "imgURL": "../../assets/imgs/shopBanana.png",
+        "productName": "Herbal Green Tea",
+        "category": "Beverages",
+        "imgURL": "../../assets/imgs/shopGreenTea.png",
         "stars": 4,
-        "starVotes": 23,
-        "price": 280,
-        "salesPrice": 280,
+        "starVotes": 28,
+        "price": 120,
+        "salesPrice": 100,
         "isFresh": true,
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
-    },
-    {
+        "description": "A soothing blend of green tea leaves and calming herbs. Helps detox your body while promoting relaxation and energy."
+      },
+      {
         "id": 4,
-        "productName": "Vegan Egg Replacer",
-        "category": "vegetables",
-        "imgURL": "../../assets/imgs/shopGreen.png",
+        "productName": "Plant-Based Protein Powder",
+        "category": "Fresh Organic",
+        "imgURL": "../../assets/imgs/shopProteinPowder.png",
         "stars": 4,
-        "starVotes": 23,
-        "price": 280,
-        "salesPrice": 240,
+        "starVotes": 60,
+        "price": 400,
+        "salesPrice": 350,
         "isFresh": true,
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
-    },
-    {
-        "id": 5,
-        "productName": "Vegan Egg Replacer",
-        "category": "vegetables",
-        "imgURL": "../../assets/imgs/shopPepper.png",
-        "stars": 4,
-        "starVotes": 23,
-        "price": 280,
-        "salesPrice": 280,
-        "isFresh": true,
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
-    },
-    {
-        "id": 6,
-        "productName": "Vegan Egg Replacer",
-        "category": "vegetables",
-        "imgURL": "../../assets/imgs/shopAppNOrange.png",
-        "stars": 4,
-        "starVotes": 23,
-        "price": 280,
-        "salesPrice": 200,
-        "isFresh": true,
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
-    },
-    {
-        "id": 7,
-        "productName": "Vegan Egg Replacer",
-        "category": "vegetables",
-        "imgURL": "../../assets/imgs/shopApple.png",
-        "stars": 4,
-        "starVotes": 23,
-        "price": 280,
-        "salesPrice": 200,
-        "isFresh": true,
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi placeat perferendis a ipsam voluptate rerum eius, neque aliquam alias asperiores deleniti aperiam possimus minus accusantium. Laboriosam atque recusandae repudiandae neque distinctio veritatis magni non, laudantium iste modi quaerat, sunt doloremque in nihil necessitatibus, ipsam fuga illum exercitationem dolore sapiente."
-    }
+        "description": "High-quality plant-based protein made from peas and rice. Perfect for post-workout recovery or as a meal replacement."
+      }
     ]
   }
 ]

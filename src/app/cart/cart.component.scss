@@ -1,3 +1,26 @@
+@mixin viewAll {
+    width: fit-content;
+    padding: 11px 27px 11px 36px;
+    border-radius: 100px;
+    display: flex;
+    border: 0;
+    background-color: #62a404;
+    color: white;
+    font-weight: bolder;
+    .arrow-circle {
+        margin-left: 12px;
+        background-color: #437400;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+            font-size: 12px;
+        }
+    }
+}
 .container {
     padding-top: 100px;
     .top-row-par {
@@ -101,6 +124,32 @@
                 color: #67a005;
                 font-weight: bolder;
             }
+        }
+    }
+    .no-product {
+        margin-top: -300px;
+        .zero {
+            font-size: 400px;
+            color: #62a404;
+            font-weight: bolder;
+            text-align: center;
+            margin-top: 0px;
+        }
+        p {
+            color: #2a2a2a;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            font-size: 50px;
+            margin: auto;
+            margin-top: -115px;
+            width: 500px;
+            max-width: 100%;
+            padding-bottom: 30px;
+        }
+        .view-all {
+            margin: auto;
+            margin-bottom: 100px;
+            @include viewAll();
         }
     }
 }

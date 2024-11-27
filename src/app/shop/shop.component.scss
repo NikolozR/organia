@@ -274,11 +274,11 @@
 
                 .prod-card {
                     position: relative;
-                    height: 420px;
                     border: 2px solid #e7e7e7;
                     border-radius: 19px;
+                    padding-top: 10px;
                     display: flex;
-                    justify-content: flex-start;
+                    justify-content: center;
                     width: 100%;
 
                     .hover-ting {
@@ -346,8 +346,16 @@
                     }
 
                     .inside {
-                        margin: auto;
-
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .img-can {
+                            img {
+                                width: 200px;
+                                height: 200px;
+                                object-fit: contain;
+                            }
+                        }
                         .card-content {
                             padding-top: 30px;
                             padding-bottom: 32px;
@@ -398,17 +406,13 @@
                     }
 
                     &:hover {
+                        .inside, .fresh, .like, .liked {
+                            opacity: 0.4;
+                        }
                         .hover-ting {
                             display: flex;
                             gap: 7px;
-                        }
-
-                        .inside {
-                            .img-can {
-                                img {
-                                    opacity: 0.4;
-                                }
-                            }
+                            opacity: 1;
                         }
                     }
                 }
